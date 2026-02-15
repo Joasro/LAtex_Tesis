@@ -1,0 +1,134 @@
+\chapter[Movilidad Inteligente]{Tecnologías para la movilidad inteligente}
+\label{cp:movilidad-inteligente}
+
+\insertminitoc
+\parindent0pt
+
+\section{Evolución de los sistemas de transporte inteligente (ITS)}
+Los \acrfull{its} consiste en aplicar Tecnologías de la Información \acrfull{ti} incluyendo 
+telecomunicaciones, sensores y automatización al sector 
+del transporte y la movilidad. El objetivo principal es mejorar la eficiencia operativa, la seguridad 
+vial, la gestión del tráfico y, fundamentalmente, optimizar la experiencia del usuario. Son un enfoque 
+que busca mejorar la eficiencia del transporte a través de la aplicación de tecnología \cite{wootton_intelligent_1995}.
+Los \acrshort{its} no representan una innovación repentina, sino el resultado de un proceso evolutivo y gradual. 
+Su desarrollo ha sido impulsado por avances continuos en cuatro áreas tecnológicas clave: la mejora de 
+las comunicaciones, que facilita el intercambio de datos en tiempo real; el progreso en la automatización 
+de vehículos e infraestructuras; el crecimiento exponencial en la capacidad de procesamiento de 
+información; y la creciente sofisticación de los modelos y arquitecturas de datos que optimizan la 
+gestión de la movilidad urbana.
+
+\subsection{Orígenes y primeros desarrollos}
+En sus inicios, la gestión de tráfico se caracterizaba por sistemas de señalización estática. Estos 
+operaban con tiempos de ciclo preprogramados o fijos, basándose estrictamente en horarios establecidos 
+y modelos históricos, y sin capacidad de ajuste en tiempo real al volumen o a la demanda real del flujo 
+vehicular.
+Hay revisiones históricas que describen cómo los ITS emergieron gradualmente desde sistemas simples de 
+semáforos y control básico.
+
+\subsection{Comunicación Vehicular}
+La comunicación entre los vehículos y con la infraestructura vial ha adquirido una importancia 
+fundamental en los ITS más recientes, gracias a la implementación de las \acrfull{vanets}.  En las \acrshort{vanets}, los vehículos funcionan como puntos de conexión que están constantemente 
+compartiendo y reuniendo datos. Esto permite ofrecer servicios de transporte novedosos, tales como la 
+administración del tráfico, la asistencia en la navegación, la conducción sin intervención humana y la 
+emisión de avisos o alarmas \cite{gillani_data_2022}.
+La conectividad vehicular se define como la capacidad de un vehículo para establecer comunicación directa
+con otros vehículos \acrfull{v2v} o con la infraestructura vial \acrfull{v2i}. Esta capacidad permite el intercambio
+de datos en tiempo real. Si bien el objetivo final de esta tecnología es lograr una cobertura de red 
+completa donde teóricamente "todos los vehículos que viajan por la carretera estén conectados", la 
+conectividad es la habilidad intrínseca para iniciar y mantener dichas comunicaciones \cite{hussain_vehicular_2019}.
+De igual forma, según \cite{al-heety_comprehensive_2020}, el cual describe cómo \acrfull{sdn} están 
+siendo incorporadas para mejorar la gestión y coordinación de redes vehiculares, mejor seguridad y 
+flexibilidad en \acrshort{its}. Las cuales se percibe como una solución moderna y fundamental para superar las 
+limitaciones de las redes vehiculares heterogéneas, dinámicas y a gran escala como \acrshort{vanets} e \acrfull{iov}, al ofrecer control centralizado, programabilidad y eficiencia mejorada.
+
+\begin{figure}[!htpb]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/V2V.pdf}
+        \caption{Tecnología \acrshort{v2v}}
+        \label{fig:figure-v2v-04}
+    \end{subfigure}
+    \hspace{.5cm} % Adjust the space as needed.
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/V2I.pdf}
+        \caption{Tecnología \acrshort{v2i}}
+        \label{fig:figure-v2i-04}
+    \end{subfigure}
+    \caption{Tecnologías de comunicación vehicular \acrshort{v2v} y \acrshort{v2i}.}
+    \label{fig:figure-v2v-v2i-04}
+\end{figure}
+
+\subsection{Control Adaptativo y métodos basados en inteligencia artificial}
+La creciente accesibilidad a los datos en tiempo real está impulsando la difusión de los sistemas 
+adaptativos.  Estos autores proponen \cite{wang_adaptive_2024} una estrategia llamada SD3-Light con el fin de 
+solucionar la congestión vehicular. Esta táctica se basa en el control en tiempo real de los semáforos, 
+lo que implica ajustar dinámicamente sus fases y la duración de las mismas. Este trabajo de investigación 
+utiliza específicamente el \acrfull{rl} como su enfoque principal.
+Adicionalmente, el uso del aprendizaje profundo para pronosticar el flujo de vehículos hace posible 
+prever y reaccionar a los cambios bruscos en las condiciones del tráfico. El autor \cite{qin_research_2023} propone 
+un enfoque innovador para la \acrfull{tfp} urbano utilizando Big Data y \acrfull{dl}, con el objetivo de mejorar la precisión y apoyar el desarrollo 
+urbano sostenible
+
+\subsection{Tecnologías emergentes y comunicación no tradicional}
+Los ITS más recientes utilizan el Big Data y modelos de predicción debido a la enorme cantidad de datos 
+recopilados por sensores, dispositivos móviles y vehículos interconectados. Esto les permite prever dónde 
+habrá atascos, mejorar las rutas y adaptar la planificación.
+También, surgen tecnologías poco convencionales, un ejemplo es la que propone \cite{vieira_adaptive_2024} un sistema 
+que emplea luces LED en vehículos e infraestructura (\acrshort{v2v}, \acrshort{v2i}) para la comunicación bidireccional, 
+permitiendo la localización precisa de los vehículos y la recopilación de datos detallados sobre el 
+tráfico, concluyendo su trabajo con que el control de tráfico adaptativo utilizando la tecnología \acrfull{v-vlc} 
+es una tecnología prometedora para permitir una comunicación confiable y eficiente en entornos de 
+vehículos conectados y tiene una promesa significativa para mejorar el flujo de tráfico
+
+
+\section{ Herramientas tecnológicas aplicadas al control del tráfico}
+Los ITS más recientes utilizan el Big Data y modelos de predicción debido a la enorme cantidad de 
+datos recopilados por sensores, dispositivos móviles y vehículos interconectados. Esto les permite 
+prever dónde habrá atascos, mejorar las rutas y adaptar la planificación.
+
+\begin{itemize}
+    \item \textbf{Sistemas de control adaptativo basados en sensores y localización de detectores:} 
+    Instalar sistemas de control adaptativo es una de las tácticas más efectivas para mejorar la 
+    administración del tráfico en los cruces.  Estos sistemas pueden alterar los tiempos de los 
+    semáforos en tiempo real, basándose en los datos exactos que proveen los sensores de detección 
+    ubicados estratégicamente.  De esta manera \cite{miletic_review_2022}, analiza el problema del tráfico denso 
+    en las ciudades y sugiere que los \acrfull{atsc} son 
+    la solución propuesta para enfrentarlo y concluye cómo es esencial el uso de algoritmos \acrfull{rl} para 
+    lograr que los sistemas de semáforos puedan reaccionar de forma dinámica y se ajusten a los patrones 
+    de tráfico en constante variación.
+    Asimismo, \cite{zhu_adaptive_2019} propone un método de control de señales de tráfico adaptativo y de bajo costo 
+    diseñado para reducir la congestión en las intersecciones, especialmente en regiones con presupuestos 
+    limitados , logrando demostrar que el método propuesto logra una reducción significativa en el 
+    retraso total del tráfico en intersecciones con ratios de volumen a capacidad tanto bajos como altos.
+    \item \textbf{Algoritmos de aprendizaje automático / aprendizaje reforzado (Reinforcement Learning) 
+    y control basado en datos históricos: } Retomando el punto anterior sobre RL, los algoritmos que 
+    usan aprendizaje automático (particularmente aprendizaje reforzado) junto con características del 
+    estado real del tráfico (colas, flujos, etc.) permiten optimizar secuencias semafóricas de forma 
+    más eficiente frente a métodos estáticos o basados en reglas simples. En donde hablábamos sobre el 
+    trabajo hecho por \cite{wang_adaptive_2024}.
+    \item \textbf{Visión por computadora y sensores visuales para priorización de vehículos de emergencia:} 
+    Una tecnología esencial para identificar a los vehículos de emergencia (camiones de bomberos o 
+    ambulancias) y asignarles automáticamente preferencia en los semáforos es la visión artificial.  
+    La finalidad principal de esta acción es disminuir notablemente los plazos de respuesta, así como, 
+    disminuir el riesgo de que se pierdan vidas. Así como, \cite{nellore_traffic_2016} propone un sistema que utiliza 
+    sensores visuales en las intersecciones para medir la distancia de los vehículos de emergencia y 
+    contar el tráfico circundante, empleando la distancia euclidiana como la técnica más precisa. 
+    Beneficiando de esta forma a la población dado el profundo y significativo impacto social que 
+    generan los eventos de emergencia.
+    \item \textbf{Frameworks y simulaciones para comparar controladores adaptativos:} el hecho de que 
+    estas herramientas permiten experimentar con varias estrategias para gestionar el tráfico las hace 
+    esenciales.  Lo más relevante es que, al evitar la necesidad de instalar estos sistemas complejos 
+    físicamente en la infraestructura vial, los costes de implementación y prueba se reducen 
+    considerablemente. Paralelamente, \cite{genders_open-source_2019} expone un marco de código abierto para la creación 
+    y análisis de diferentes modelos de control adaptativo de semáforos en simulaciones. Este marco 
+    aplica enfoques tradicionales para el control del tráfico, como los modelos de Webster, Max-pressure 
+    y \acrfull{sotl}. Se ha logrado demostrar que estos marcos incrementan la 
+    eficiencia en cuanto a tiempos de viaje y demoras.
+    \item \textbf{Priorización de tráfico de emergencia y sistemas dinámicos:} además de la detección 
+    visual, hay estudios que sugieren sistemas integrales que aseguran la prioridad de tránsito para los 
+    vehículos de emergencia. Estos sistemas cumplen su propósito al modificar de manera dinámica las 
+    señales de tráfico, llegando a ajustar incluso todo el ciclo semafórico de un cruce con base en 
+    la detección en tiempo real de la cercanía de esos vehículos \cite{ariffin_real-time_2021}.
+\end{itemize}

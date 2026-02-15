@@ -1,0 +1,99 @@
+\chapter[Anexos]{Anexos}
+\label{chap:anexos}
+\addcontentsline{toc}{chapter}{Anexos}
+
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=gray!60!black, title=Anexo A \- Proceso de configuración de SUMO]
+	En este anexo se presentan unas fotografías del proceso de configuración de SUMO.
+    En la imagen se observa como se esta trabajando con la herramienta de edición de redes de SUMO (NETEDIT) para la
+    creación de la red vial correspondiente al área de estudio.
+\end{tcolorbox}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/Anexos/yo_!.jpg}
+    \caption{Interfaz de SUMO NETEDIT para la edición de redes viales}
+    \label{fig:anexo-sumo-netedit}
+\end{figure}
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=gray!60!black, title=Anexo B \- Equipo de cómputo utilizado]
+	En este anexo se muestra el equipo de cómputo utilizado para la realización de las simulaciones
+    vehiculares y análisis de datos presentados en este trabajo.
+\end{tcolorbox}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/Anexos/pc.jpg}
+    \caption{Equipo de cómputo utilizado para la realización de las simulaciones y análisis de datos}
+    \label{fig:anexo-equipo-computo}
+\end{figure}
+
+\clearpage
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=gray!60!black, title=Anexo C \- Código en pyhton para la generación del grafos]
+	En este anexo se presenta un fragmento de código utilizado para la generación y análisis del grafo
+    vial del área de estudio utilizando la librería OSMNX y NetworkX.
+\end{tcolorbox}
+
+\begin{listing}[H]
+    \caption{Fragmento de código en python para la generación y análisis del grafo}
+    \label{cod:anexo-grafo}
+    \begin{minted}{python}
+        G2 = ox.consolidate_intersections(ox.project_graph(G_simplified), tolerance=15)
+
+        for u, v, a in G2.edges(data=True):
+        if 'maxspeed' not in a:
+            a['maxspeed'] = 50
+        if isinstance(a['maxspeed'], list):
+            a['maxspeed'] = min(a['maxspeed'])
+        elif isinstance(a['maxspeed'], dict):
+            print(a)
+
+        if isinstance(a['maxspeed'], str):
+            a['maxspeed'] = float(a['maxspeed'])
+
+        a['travel_time'] = a['length'] / a['maxspeed']
+
+        G2[u][v][0]['travel_time'] = a['travel_time']
+
+        ox.plot_graph(G2, edge_color=ox.plot.get_edge_colors_by_attr(G2, attr='maxspeed'))
+
+        fig, ax = ox.plot_graph(G2, edge_color=ox.plot.get_edge_colors_by_attr(G2, attr='travel_time'))
+
+        edges_by_time = sorted(G2.edges(data=True), key=lambda e: e[2]['travel_time'], reverse=True)
+
+        [e[2].get('name', 'Unnamed edge') for e in edges_by_time[:10]]
+
+        nodes_centrality = nx.betweenness_centrality(G2, weight='length')
+
+        for node, centrality in nodes_centrality.items():
+        G2.nodes[node]['centrality'] = centrality
+
+        ox.plot_graph(G2, node_color=ox.plot.get_node_colors_by_attr(G2, attr='centrality'))
+
+    \end{minted}
+\end{listing}
+
+\clearpage
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=gray!60!black, title=Anexo D \- Fragmento de código en python para la generación del gráficas]
+	En este anexo se presentan el ejemplo de un código utilizado para el análisis de datos generados por la simulación
+    vehicular en SUMO y la generación de las gráficas presentadas en el capítulo.
+	El código completo se encuentra disponible en el cuaderno ejecutable:
+	\url{}.
+\end{tcolorbox}
+
+\begin{listing}[H]
+    \caption{Fragmento de código para el análisis de datos de SUMO y generación de gráficas}
+    \label{cod:anexo-sumo}
+    \begin{minted}{python}
+        # Cargar y obtener los promedios de cada archivo para todas las columnas
+        datos_por_columna = {col: [] for col in cols}
+
+        for archivo, etiqueta_archivo in archivos:
+            df = pd.read_csv(archivo)
+            for col in cols:
+                promedio = df[col].mean()
+                datos_por_columna[col].append((promedio, etiqueta_archivo))
+    \end{minted}
+\end{listing}

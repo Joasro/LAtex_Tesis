@@ -1,0 +1,107 @@
+\chapter[Conclusiones y recomendaciones]{Conclusiones y recomendaciones}
+\label{chap:conclusiones}
+
+\insertminitoc
+\parindent0pt
+
+\section{Conclusiones generales}
+
+El modelado de la red vial de Comayagua como un grafo ha demostrado ser una táctica analítica muy eficaz para administrar el tráfico. Se ha conseguido detectar con exactitud 
+las rutas críticas, describir los flujos de movilidad predominantes y evaluar los patrones más significativos de congestión a través del uso de la simulación y la teoría de 
+grafos. Los hallazgos ofrecen un fundamento sólido y medible para la toma de decisiones, lo que posibilita sugerir estrategias específicas de gestión del tráfico con 
+georreferenciación y gran impacto, las cuales ayudarán a mejorar notablemente la movilidad urbana en Comayagua.
+
+Se logró \textbf{representar} con éxito la red vial de Comayagua utilizando un grafo, en el que las intersecciones son los nodos y los tramos viales son las aristas. Este modelo 
+posibilitó determinar que el embotellamiento vehicular se enfoca en un número restringido de tramos viales contiguos y cruces nodales. Los lugares donde la carga vehicular 
+supera significativamente la capacidad de la carretera se identificaron con exactitud.
+
+La \textbf{recolección y el procesamiento} de los datos de movilidad confirmaron la existencia de patrones de flujo diarios y horarios bien definidos, típicamente asociados a horas. La 
+identificación de estos patrones de flujo y la determinación de puntos críticos de congestión son esenciales para la implementación de medidas de control de tráfico dinámicas.
+
+La \textbf{implementación de algoritmos de la Teoría de Grafos}, como el análisis de Centralidad (para identificar nodos clave), Caminos Mínimos y Flujo Máximo/Detección de Cuellos de 
+Botella, permitió identificar las rutas estratégicas más utilizadas y sus capacidades límite. Estos modelos no solo señalaron los cuellos de botella existentes, sino que 
+también permitieron predecir el impacto de la redistribución del tráfico, revelando rutas alternativas subutilizadas que pueden ser explotadas para descongestionar el núcleo 
+vial.
+
+Los escenarios de movilidad urbana fueron replicados con gran precisión por las herramientas de simulación del tráfico que se fundamentan en el modelo de grafos. Esta habilidad de simulación 
+fue esencial para realizar una evaluación no destructiva del efecto que distintas configuraciones viales hipotéticas tendrían y cuantificar la mejora potencial en el flujo 
+vehicular.
+
+Se ha propuesto un conjunto de estrategias para mejorar la movilidad, basándose en los puntos nodales críticos (las intersecciones de elevada centralidad) y en lo que se 
+infirió a partir del análisis de grafos y las situaciones evaluadas durante la simulación. Estas sugerencias abarcan la optimización de los tiempos y la sincronización de los 
+semáforos actuales para hacer más fluido el tráfico, así como transformar o crear rotondas en las intersecciones donde el volumen vehicular y la complejidad lo hagan necesario. 
+Estas intervenciones, que han sido validadas mediante simulaciones, constituyen un insumo estratégico y factible para manejar el tráfico y disminuir de manera sostenida la 
+congestión en Comayagua.
+
+\section{Aportes tecnológicos y prácticos de la investigación}
+El estudio de la circulación vehicular en Comayagua, el cual modeliza la red vial con grafos, produce aportes importantes que trascienden la mera sugerencia de políticas 
+públicas y que establecen un entorno metodológico y tecnológico para administrar el tráfico de manera inteligente.
+
+\begin{itemize}
+    \item \textbf{Creación de un modelo de grafo ponderado y dirigido de la red vial:} La digitalización conceptual de la infraestructura de Comayagua es la primera contribución y 
+    la más importante. La red vial pasa de ser un mapa estático a transformarse en un \acrfull{gpd}.
+    \item \textbf{Desarrollo e implementación de un set de algoritmos analíticos de alto impacto:} la investigación se basa en la aplicación sistemática de algoritmos de la Teoría de 
+    Grafos que otorgan una inteligencia analítica a los datos de movilidad, algo que no se logra con métodos de conteo tradicionales.
+    \item \textbf{Plataforma de simulación y evaluación predictiva:} Se implementó una herramienta de simulación de tráfico (basada en el modelo de grafo) que representa un salto 
+    tecnológico clave. Esta plataforma permite.
+    \item \textbf{Marco metodológico replicable para la gestión inteligente:} En última instancia, la investigación no simplemente proporciona resultados; también define un marco 
+    metodológico integral y replicable. Este marco tiene la posibilidad de ser trasladado a otras ciudades que enfrenten retos de tráfico parecidos, actuando como un protocolo 
+    tecnológico para la administración urbana. El modelo combina la georreferenciación (captura de datos), el análisis matemático (procesamiento de grafos) y la simulación 
+    (visualización), lo que le brinda a Comayagua una habilidad para vigilar y manejar el tráfico, fundamentada en datos y proactiva.
+\end{itemize}
+
+\section{Limitaciones encontradas durante la implementación}
+La realización del proyecto de análisis de tráfico vehicular, a pesar de que alcanzó sus metas, tuvo que superar diversos retos propios de la utilización de métodos tecnológicos 
+avanzados en una situación urbana particular como la Comayagua. Para lograr resultados fiables, era esencial superar estas dificultades. \\
+
+\textbf{Disponibilidad y Calidad de los Datos de Movilidad} \\
+\begin{itemize}
+    \item \textbf{Ausencia de datos históricos centralizados:} No había un repositorio de datos central y público que incluyera incidentes de tránsito, conteos históricos de vehículos o tiempos de viaje.
+    \item \textbf{Dependencia en la recolección primaria:} Se necesitó un fuerte apoyo de la recolección de datos manual y primaria (conteo en campo) para realizar la investigación.
+\end{itemize}
+
+\textbf{Calibración y Validación de los Modelos de Simulación} \\
+
+\begin{itemize}
+    \item \textbf{Ajuste fino del comportamiento del flujo:} el proceso de ajustar los parámetros del modelo de simulación para que el tráfico vehicular en el entorno virtual concordara con la conducta real vista en las calles de Comayagua fue un procedimiento técnico y cíclico complicado.
+    \item \textbf{Limitaciones de infraestructura para simulación:} las herramientas que se emplearon requirieron una capacidad de procesamiento significativa para gestionar la complejidad del grafo y llevar a cabo simulaciones de gran envergadura con lapsos de respuesta razonables.
+\end{itemize}
+
+\textbf{Retos en la Integración y Transferencia Tecnológica} \\
+
+\begin{itemize}
+    \item \textbf{Curva de aprendizaje:} para el personal de gestión de tráfico tradicional, el uso de la Teoría de Grafos como herramienta de administración es conceptualmente nuevo y necesita un aprendizaje especializado para que se puedan entender e implementar adecuadamente los resultados.
+\end{itemize}
+
+\section{Recomendaciones}
+A partir de los resultados que se han logrado con la simulación de escenarios, el diagnóstico de la red vial y el modelado de grafos, se exponen las siguientes sugerencias 
+estratégicas para los organismos responsables de la planificación urbana y las autoridades municipales en Comayagua:
+\begin{itemize}
+    \item \textbf{Instalación de infraestructura vial esencial:} al llevar a cabo la transformación de intersecciones complicadas en rotondas y el rediseño geométrico de segmentos 
+congestionados para suprimir los cuellos de botella y asegurar un flujo constante, se da prioridad a la inversión física en los nodos centrales que han sido identificados.
+    \item \textbf{Sincronización y actualización del sistema de semáforos:} mejorar el control del tráfico a través de la puesta en marcha de una "onda verde" coordinada en las vías principales y la transformación hacia semáforos inteligentes que funcionan con sensores, lo que posibilita ajustar los tiempos de luz verde según la demanda vehicular en tiempo real.
+    \item \textbf{Digitalización y seguimiento constante (Smart City):} Cambiar hacia un modelo de gestión inteligente a través de la implementación de sensores IoT para recopilar datos en tiempo real, así como la institucionalización del modelo de grafos como instrumento oficial y duradero para evaluar las obras públicas.
+    \item \textbf{Gestión de la demanda y normativas:} Se deben establecer políticas de organización vial, las cuales se fundamentan en los patrones de flujo detectados, por ejemplo, restringiendo la circulación de vehículos pesados en horarios pico y señalizando oficialmente rutas alternativas que sean estratégicas para una distribución más efectiva de la carga vehicular.
+    \item \textbf{Líneas de investigación futuras:} Ampliar la cobertura del modelo vigente incorporando capas de análisis para el transporte público y la movilidad multimodal (incluidos ciclistas y peatones), con el propósito de diseñar una planificación urbana más equitativa y sostenible.
+\end{itemize}
+
+\section{Trabajos Futuros}
+La presente investigación ha establecido un modelo base utilizando la teoría de grafos para el análisis estático del tráfico en Comayagua. Sin embargo, para escalar esta 
+solución hacia una gestión inteligente y autónoma ("Smart City"), se proponen las siguientes líneas de desarrollo basadas en la integración tecnológica: \\
+
+\textbf{Incorporación de la visión artificial para automatizar los conteos:} reemplazar el proceso de recolección manual de datos a través del uso de algoritmos de visión por 
+computadora (como SSD o YOLO) en las cámaras urbanas. Esto posibilitará la clasificación de vehículos, el conteo volumétrico y la detección de trayectorias en un modo 
+automático y constante, lo cual disminuirá los costos operativos de recolección de datos y suprimirá el error humano. \\
+
+\textbf{Creación de un sistema híbrido: Simulación + Visión artificial + Grafos:} desarrollar una plataforma integral que integre las tres tecnologías fundamentales:
+\begin{itemize}
+    \item Grafos: para la lógica estructural y el cálculo de las rutas más eficaces.
+    \item Visión artificial: para la introducción de datos en tiempo real.
+    \item Simulación: para la predicción de situaciones en el futuro. Este sistema híbrido operará como un "Gemelo Digital" de la ciudad, con la capacidad de auto ajustarse de manera continua.
+\end{itemize}
+
+\textbf{Implementación de un Centro de Monitoreo Urbano Inteligente:} crear un centro de control único que integre la información que proviene del sistema híbrido. Utilizando tableros de control
+interactivos que se nutren del análisis automático de las cámaras, este centro facilitará a las autoridades la visualización de alertas de congestión en el mapa de grafos y la toma de decisiones 
+proactivas desde un sitio centralizado.\\
+
+\textbf{Evaluación y medición de impacto mediante visión artificial:} usar la infraestructura de las cámaras no solo con el fin de monitorear, sino también como instrumento para auditar las estrategias que se han implementado. El sistema llevará a cabo una comparación visual de los flujos "Antes" y "Después" de la intervención, cuantificando la disminución real de las colas y validando de forma empírica la eficacia de las proposiciones del estudio.

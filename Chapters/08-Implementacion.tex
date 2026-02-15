@@ -1,0 +1,246 @@
+\chapter{Implementación}
+\label{ch:implementacion}
+
+\insertminitoc
+\parindent0pt
+
+
+\section{Diseño de la Solución tecnológica}
+El diseño de la solución tecnológica es un paso fundamental en el proyecto, pues establece la estructura técnica y conceptual del sistema que se dirige a analizar y 
+optimizar la circulación de vehículos utilizando teoría de grafos.  Este método posibilita representar la red vial de Comayagua como un grafo ponderado, en el que las 
+aristas son las vías de circulación y los nodos son las intersecciones. Se les asignan características como longitud, capacidad y velocidad máxima.  El propósito es crear 
+una herramienta que sea pertinente, versátil y acorde con la realidad de la ciudad. 
+
+La estructura del sistema se organiza bajo un \textbf{diseño modular}, integrando cuatro componentes principales:
+\begin{itemize}
+    \item \textbf{Captura y organización de datos:} la recolección de datos sobre la movilidad vehicular se realiza en este módulo, utilizando técnicas de observación directa y 
+    fuentes de información georreferenciadas, como OSM. Se organizan y limpian los datos para crear el grafo vial y determinar las características necesarias de aristas y nodos.
+    \item \textbf{Análisis de la red vial mediante teoría de grafos:} aquí se utilizan algoritmos y métricas de grafos, como caminos mínimos y centralidad, así como la detección de 
+    nodos críticos, para detectar cuellos de botella, rutas eficaces y debilidades en la infraestructura vial. Este análisis posibilita entender la topología de la red y prever 
+    cómo se comportará el flujo de vehículos en diferentes situaciones.
+    \item \textbf{Simulación del tráfico:} se utiliza SUMO para simular el comportamiento de los vehículos en la red de grafos. Este módulo posibilita la realización de diferentes escenarios, 
+    el análisis de cómo repercuten las modificaciones en el flujo y la evaluación de cómo se distribuye el tráfico en situaciones normales, de congestión o de contingencia.
+    \item \textbf{Presentación y estudio de resultados:} los datos obtenidos a partir de la simulación y el análisis se procesan y visualizan por medio de herramientas adicionales como 
+    Excel y entornos de programación como Python. Se producen gráficos, diagramas de flujo y métricas que hacen más sencillo el análisis de los resultados y la toma de 
+    decisiones.
+\end{itemize}
+
+Desde la perspectiva modular, esta arquitectura permite que la mantenibilidad y escalabilidad del sistema sean sencillas. Esto posibilita que la implementación de 
+modificaciones futuras en la red vial, incorporación de sensores urbanos o integración con sistemas \acrshort{iot} no alteren la estructura general del modelo.  Asimismo, la utilización 
+de grafos ofrece una representación exacta y adaptable del sistema vial, lo cual es esencial para planificar y mejorar la movilidad urbana en Comayagua.
+
+\subsection{Arquitectura general del sistema}
+La arquitectura del sistema se estructura en cuatro niveles interconectados, los cuales se han creado para mostrar de forma precisa el recorrido de la información desde que es recolectada 
+hasta que se visualizan los resultados:
+
+\begin{itemize}
+    \item \textbf{Capa de obtención de datos:} esta capa alberga toda la información que se ha reunido acerca de la movilidad urbana en Comayagua. Se adquirieron los datos a través de observación directa. Combinan el número de vehículos, los horarios con mayor tráfico y las particularidades de las vías.
+    \item \textbf{Capa de análisis con grafos:} se desarrolla y analiza la red vial en esta capa, utilizando herramientas informáticas y matemáticas que se fundamentan en la teoría de grafos. Las principales tareas que realiza son:
+    \begin{itemize}
+        \item Edificación del grafo vial utilizando OSMnx, una biblioteca especializada en la descarga, modelado y proyección de redes urbanas directamente desde OpenStreetMap.
+        \item Análisis y procesamiento de la estructura con NetworkX, lo que posibilita el cálculo de métricas esenciales como:
+        \begin{itemize}
+            \item el grado de los nodos,
+            \item rutas mínimas,
+            \item centralidades (grados de cercanía, grados de intermediación y grados),
+            \item detección de cuellos de botella y nodos decisivos.
+        \end{itemize}
+        \item Conversión del mapa vial en un grafo dirigido o no dirigido, dependiendo de las características de las carreteras.
+        \item Acondicionamiento de la red para exportarla a ambientes de simulación.
+        
+        La combinación de OSMnx y NetworkX posibilita realizar un análisis sólido, replicable y basado en matemáticas del comportamiento de la red.
+    \end{itemize}
+    \item \textbf{Capa de simulación:} En esta capa, se incorpora el grafo vial al simulador \Acrshort{sumo}, lo que da lugar a un ambiente digital en el que se simulan diferentes situaciones de tráfico: condiciones normales, congestión o contingencias. La simulación posibilita la evaluación del efecto de las fluctuaciones en el tránsito vehicular y la exploración de la redistribución del tráfico según la topología de la red, confirmando así los patrones estructurales que se identificaron en la capa previa.
+    \item \textbf{Capa de resultados:} esta capa muestra los resultados del análisis y la simulación a través de gráficos, empleando herramientas como hojas de cálculo y Matplotlib. Esta capa ayuda a interpretar la información, identificar patrones significativos y generar insumos para tomar decisiones acerca de la gestión de la movilidad urbana.
+\end{itemize}
+Este diseño por capas permite una \textbf{integración modular y escalable}, donde cada componente puede actualizarse o ajustarse sin afectar la totalidad del sistema, 
+asegurando que la red vial y los escenarios simulados puedan adaptarse a futuros cambios en la infraestructura urbana o nuevas estrategias de movilidad.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Arquitectura de Sistema.pdf}
+    \caption[Arquitectura del Sistema de Análisis y Optimización del Tráfico Vehicular]{Arquitectura del Sistema de Análisis y Optimización del Tráfico Vehicular. Fuente: Elaboración propia.}
+    \label{fig:figure-arquitectura-sistema}
+\end{figure}
+
+\subsection{Flujo de procesos}
+El recorrido operativo del sistema, conocido como flujo de procesos, se encarga de convertir la 
+información reunida del tráfico datos sobre volumen, velocidad, densidad en hallazgos que ayudan a tomar 
+buenas decisiones sobre cómo manejar el transporte, tanto a nivel estratégico como operativo. Pero ojo, 
+esta conversión no es directa; más bien, sigue un ciclo estricto y permanente. El flujo tiene seis fases 
+clave, puestas en orden en un circuito que va del análisis a la simulación y luego a la retroalimentación, 
+todo para que el sistema mejore sin parar.
+
+\begin{itemize}
+    \item Recolección de datos
+    \item Analisis de la red vial (teoría de grafos)
+    \item Simulación del tráfico (SUMO)
+    \item Visualización de resultados
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/Flujo de procesos .pdf}
+    \caption[Flujo de procesos del sistema de análisis y optimización del tráfico vehicular]{Flujo de procesos del Sistema de Análisis y Optimización del Tráfico Vehicular. Fuente: Elaboración propia.}
+    \label{fig:figure-flujo-procesos}
+\end{figure}
+
+\section{Implementación}
+
+\subsection{Preparación y estructuración de los datos}
+El procedimiento inició con la recogida y la estructuración de los datos observacionales que se habían 
+recopilado en las avenidas y las intersecciones más relevantes de Comayagua. Los datos se volcaron en una 
+hoja de cálculo de Microsoft Excel, en la que constituimos campos de datos como: la hora, el tipo de 
+vehículo, la cantidad, la velocidad estimada y el tiempo medio de espera.
+
+El siguiente paso fue llevar a cabo un proceso de limpieza y de normalización de los datos. Se eliminaron 
+valores incorrectos o fuera de rango y, por medio de este proceso, se definieron promedios representativos 
+a intervalos de tiempo. La labor de preparación de los datos fue muy importante para obtener una 
+coherencia en las variables antes de ser volcada el modelo predictivo.
+
+\subsection{Desarrollo del modelo de análisis basado en teoría de grafos}
+El modelo de análisis fue desarrollado en Google Colab, aprovechando su compatibilidad con librerías especializadas para el tratamiento de datos y análisis de redes 
+como Pandas, NumPy, Matplotlib, OSMnx y NetworkX. La construcción y evaluación del modelo se organizaron en tres bloques fundamentales:
+
+\begin{itemize}
+    \item \textbf{Importación de datos y creación del gráfico vial:} la cartografía vial fue obtenida a través de OSMnx, lo que posibilitó la extracción de la red vial desde 
+    OpenStreetMap. Luego, se creó un grafo dirigido (DiGraph) en el que:
+    \begin{itemize}
+        \item Las intersecciones son representadas por los nodos.
+        \item Los arcos son segmentos de vía.
+        \item A cada arco se le asignaron características como la velocidad permitida, la longitud, el tipo de vía y la demanda proyectada.
+        
+        Antes de llevar a cabo el análisis estructural, se llevaron a cabo visualizaciones iniciales utilizando histogramas, mapas y tablas; esto posibilitó entender cómo se distribuyó el tráfico en términos espaciales y temporales.
+    \end{itemize}
+    \item \textbf{Construcción y análisis del modelo basado en grafos:} después de que la red vial fue estructurada, se pusieron en práctica métricas de teoría de grafos para examinar 
+    su funcionamiento y encontrar patrones significativos. Las métricas utilizadas abarcaron:
+    \begin{itemize}
+        \item Centralidad de grado y betweenness: para determinar los nodos y aristas que ejercen una influencia más notable en el flujo vehicular.
+        \item Dijkstra: cálculo de rutas más cortas para estimar caminos óptimos en función del tiempo o la distancia.
+        \item Identificación de cuellos de botella: a través del reconocimiento de aristas con carga relativa alta.
+        \item Análisis de conectividad: con el fin de valorar la redundancia y la vulnerabilidad de la red. 
+        
+        La combinación de OSMnx y NetworkX posibilitó el manejo del grafo y la realización de algoritmos para el análisis estructural de manera exacta, sin recurrir a modelos predictivos.
+    \end{itemize}
+    \item \textbf{Interpretación y visualización de los resultados:} por último, se elaboraron mapas y gráficos que revelaron:
+    \begin{itemize}
+        \item •	Los caminos con mayor probabilidad de congestión y centralidad.
+        \item •	Porciones que funcionan como conexiones esenciales dentro de la red.
+        \item •	Distribución territorial del flujo vehicular calculado tomando como base la estructura del grafo.
+        
+        Las visualizaciones posibilitaron la comparación de las métricas topológicas con los datos reales del tráfico, lo que validó la consistencia del modelo y facilitó el reconocimiento de las zonas más vulnerables en la red vial estudiada.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Integración con la simulación de trafico}
+Una vez desarrollado y validado el modelo de análisis basado en teoría de grafos, este se integró con \Acrshort{sumo}, herramienta open-source ampliamente utilizada en estudios 
+académicos para simular redes de transporte urbano. La simulación permitió reproducir digitalmente las condiciones del tráfico urbano de Comayagua y evaluar cómo la estructura 
+y características del grafo influyen en el comportamiento vehicular bajo distintos escenarios. El proceso se llevó a cabo en las siguientes etapas: \\
+
+\textbf{Creación del mapa urbano} \\
+Se creó un archivo .net.xml que muestra la red vial principal de Comayagua, con avenidas, cruces y direcciones de tránsito.
+Para ello, se extrajeron las coordenadas y atributos viales desde OpenStreetMap y luego se convirtieron a un formato que \Acrshort{sumo} puede procesar. En áreas de baja importancia, 
+el mapa se simplificó; sin embargo, las zonas con más densidad de tráfico, que se identificaron mediante el análisis topológico del grafo, se conservaron con precisión. \\
+
+\textbf{Definición de flujos de vehículos} \\
+Se generaron archivos .rou.xml a partir de los cuales se definieron los tipos de vehículos (automóviles, buses, camiones, motocicletas) junto con sus rutas más utilizadas. Estos flujos fueron calibrados en función de los datos observacionales. \\
+
+\textbf{Simulación y control de tráfico} \\
+Se ejecutaron múltiples simulaciones considerando distintos escenarios: horas pico, horas valle, modificaciones en la demanda y variaciones estructurales menores.
+\Acrshort{sumo} permitió registrar métricas como:
+\begin{itemize}
+    \item velocidad media por segmento,
+    \item tiempos de espera en intersecciones,
+    \item densidad vehicular por tramo,
+    \item y número de detenciones por nodo.
+\end{itemize}
+Toda la información fue exportada en archivos .xml y .csv, los cuales almacenan de forma estructurada los resultados detallados de cada escenario. \\
+
+\textbf{Análisis de escenarios} \\
+Los datos exportados se procesaron nuevamente en Python para comparar el desempeño de la red vial bajo diferentes configuraciones estructurales del grafo.
+A partir del análisis fue posible:
+\begin{itemize}
+    \item identificar segmentos críticos,
+    \item evaluar la sensibilidad del sistema a cambios en la demanda,
+    \item comparar la eficiencia entre rutas alternativas,
+    \item y examinar cómo la estructura topológica influye en la fluidez global del tráfico.
+\end{itemize}
+Los resultados permitieron evaluar la red desde una perspectiva analítica sin recurrir a modelos predictivos, basándose únicamente en métricas de teoría de grafos y comportamiento simulado.
+
+
+\subsection{Entorno de desarrollo y herramientas utilizadas}
+El desarrollo completo del sistema se llevó a cabo utilizando los siguientes recursos tecnológicos:
+
+\begin{itemize}
+    \item Lenguaje de programación: Python 3.11
+    \item Entornos de trabajo: Google Colab y Visual Studio Code
+    \item Software de simulación: SUMO (versión 1.19.0)
+    \item Gestión de datos: Microsoft Excel
+\end{itemize}
+
+Equipo de desarrollo: PC Lenovo Ideapad S340 15IWL, procesador Intel Core i5, 8 GB RAM, 500 GB SSD, 
+sistema operativo Windows 11. Estos elementos permitieron un flujo de trabajo eficiente, combinando 
+potencia de cálculo local y recursos en la nube para la ejecución de tareas de análisis y simulación 
+intensivas.
+
+\subsection{Validación inicial del sistema}
+El proceso de implementación incluyó la realización de pruebas iniciales utilizando diferentes volúmenes de datos y configuraciones de simulación. El sistema era capaz de 
+procesar los datasets experimentales sin errores y de generar reportes automáticos de congestión.
+
+\section{Pruebas y resultado preliminares}
+
+\subsection{Análisis de la red vial mediante la teoría de grafos}
+El análisis de la infraestructura vial del municipio de Comayagua se llevó a cabo mediante el uso del lenguaje 
+de programación \textbf{Python} en el entorno de \textbf{Google Colaboratory}, una plataforma clave para el desarrollo de proyectos 
+de análisis de datos y machine learning. La metodología implementada se basó en el modelado de la red vial como un 
+grafo a partir de datos geográficos. Para ello, se emplearon las librerías especializadas \textbf{OSMnx} y \textbf{NetworkX}, que facilitaron 
+tanto la descarga de la información de la red como la subsiguiente generación de la estructura del grafo. Tras el análisis 
+topológico, se logró la identificación de las aristas críticas (o enlaces cruciales) del sistema. A estas se les asignó una 
+alta ponderación debido a su significación estructural: su inhabilitación o interrupción del flujo vehicular generaría un 
+impacto sustancial en la conectividad de toda la red, obligando a los usuarios a recurrir a rutas alternativas cuya longitud 
+resultaría significativamente mayor. Este hallazgo subraya la vulnerabilidad de la red ante fallas en puntos clave.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/graph_black_white.pdf}
+    \caption[Grafo inicial de la red vial de la Cuidad de Comayagua]{Grafo inicial de la red vial de la Cuidad de Comayagua. Fuente: Elaboración propia.}
+    \label{fig:figure-grafo-inicial-comayagua}
+\end{figure}
+
+\subsection{Pruebas de simulación en SUMO}
+La evaluación inicial del modelo se llevó a cabo utilizando los escenarios base, los cuales se construyeron a partir de la 
+data empírica recolectada mediante métodos de observación. Como parte del proceso de refinamiento metodológico, fue 
+necesaria la modificación del diseño de una de las arterias viales, lo cual se atribuyó a una generación inconsistente de su 
+representación en la fase de modelado. Posteriormente, se procedió a la simulación del flujo vehicular que caracteriza las 
+principales carreteras de la ciudad. Este proceso permitió cuantificar y mapear la demanda de tráfico, logrando identificar y 
+especificar numéricamente la cantidad de vehículos que transitan por las zonas de mayor congestión observada. Esta fase es 
+crucial para la validación y la calibración del modelo de red.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/configuracion_flujo.png}
+    \caption[Configuración del flujo vehicular en Netedit]{Configuración del flujo vehicular en Netedit. Fuente: Elaboración propia.}
+    \label{fig:figure-configuracion-netedit}
+\end{figure}
+
+\subsection{Pruebas de carga}
+
+Se llevaron a cabo pruebas de sensibilidad incrementales con el propósito de evaluar la resiliencia y capacidad de la red vial frente 
+a diversos escenarios de demanda futura. Específicamente, se modelaron dos condiciones críticas:
+
+\begin{itemize}
+    \item \textbf{Escenario Proyectado:} Se aplicó un incremento en el flujo vehicular que corresponde al porcentaje de crecimiento estimado para el 
+horizonte temporal de 2030.
+    \item \textbf{Escenario de Capacidad Máxima:} Se simuló una etapa de saturación potencial, donde el volumen de tráfico se duplica con respecto a 
+los valores registrados en el escenario base.
+\end{itemize}
+
+Estas simulaciones son esenciales para determinar los umbrales de servicio, identificar puntos de falla prematura en la infraestructura y 
+predecir el desempeño del sistema vial ante incrementos significativos en la movilidad urbana.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/cap_simulacion_mod_exa.png}
+    \caption[Simulacion de Escenarios en sumo-gui]{Simulación de escenarios en SUMO-GUI. Fuente: Elaboración propia.}
+    \label{fig:figure-simulacion-sumo-gui}
+\end{figure}

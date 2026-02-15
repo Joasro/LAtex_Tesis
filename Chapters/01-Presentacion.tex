@@ -1,0 +1,73 @@
+\chapter[Introducci\'on]{Introducción}
+\label{cp:introduction}
+
+\insertminitoc
+\parindent0pt
+
+\section{Planteamiento del Problema}
+A nivel mundial, la educación superior atraviesa una crisis de "masificación" sin precedentes. Según datos de la UNESCO\cite{noauthor_higher_2026}, la matrícula universitaria global se ha triplicado en los últimos años, tomando de referencia desde el año 2000 hasta datos más recientes en 2024, pasando de 100 millones a más de 264 millones de estudiantes, lo que ha generado una presión insostenible sobre la infraestructura y los recursos docentes de las instituciones públicas. Este crecimiento desmedido, si no se gestiona con herramientas de planificación estratégica, deriva en la saturación de aulas y la incapacidad de las universidades para ofertar los cupos necesarios que la población estudiantil demanda \cite{noauthor_higher_2026}.
+
+La ineficiencia en la gestión de la oferta académica tiene consecuencias directas en el éxito estudiantil. El Banco Mundial\cite{BancoMundial2021} señala que en América Latina, aproximadamente el 46\% de los estudiantes que ingresan a la educación superior logran graduarse, y de ellos, una gran mayoría tarda hasta un 40\% más del tiempo estipulado en su plan de estudios. Este fenómeno, conocido como el rezago académico, es alimentado en gran medida por la falta de disponibilidad de asignaturas críticas, lo que obliga a los estudiantes a extender su permanencia en la universidad, elevando los costos operativos para el Estado y retrasando su inserción en el mercado laboral.
+
+En el contexto regional, la Organización de Estados Iberoamericanos (OEI) ha identificado debilidades críticas en la gestión universitaria. Según el informe diagnóstico de la región, el ecosistema digital apenas alcanzaba un 50\% de desarrollo antes de la crisis sanitaria, frente al 80\% de América del Norte\cite{marquina_informe_2022}. Esta disparidad evidencia una infraestructura tecnológica insuficiente para responder a los retos de la planificación moderna. A esto se suma la falta de pertinencia en la oferta académica; de acuerdo con un estudio sobre competitividad de la misma organización, existe una ``importante y creciente brecha'' entre la formación universitaria y las necesidades del entorno\cite{OEI2020}. Este fenómeno genera ineficiencias en el uso del capital humano y dificulta la inserción laboral de los egresados\cite{OEI2020}.
+
+A pesar de que la Inteligencia Artificial (IA) y la ciencia de datos han demostrado ser soluciones efectivas para la optimización de recursos en diversos sectores, su adopción en la gestión administrativa de las universidades públicas hondureñas es aún incipiente. Actualmente, la incorporación de tecnologías de la información en la región se ha limitado mayoritariamente a procesos administrativos básicos, desaprovechando su potencial pedagógico y de planificación~\cite{BancoMundial2021}. Las decisiones sobre la apertura de secciones académicas continúan basándose en la experiencia empírica de las autoridades, lo que ignora el potencial de los datos históricos para predecir escenarios futuros. Esta falta de herramientas analíticas dificulta garantizar una educación inclusiva, equitativa y eficiente, metas alineadas con el Objetivo de Desarrollo Sostenible (ODS) N.º 4 de la Agenda 2030\cite{moran_educacion_nodate}.
+
+
+\section{Objetivos de la investigación}
+
+\subsection{Objetivo General}
+
+Optimizar el proceso de planificación de la oferta académica en la carrera de Ingeniería en Sistemas de la UNAH-Comayagua mediante la implementación de algoritmos de inteligencia artificial que permitan una distribución eficiente de los recursos institucionales.
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}
+    \item Analizar datos históricos de cargas académicas y matrícula para identificar patrones de demanda en distintas asignaturas.
+    \item Examinar y priorizar las variables académicas y normativas que influyen en la apertura de secciones, tales como mínimos de estudiantes y prioridades académicas.
+    \item Diseñar un modelo predictivo que permita estimar la demanda de secciones académicas en futuros períodos.
+    \item Evaluar el desempeño del modelo a través de un conjunto de datos de prueba a pequeña escala.
+\end{itemize}
+
+
+\section{Preguntas de investigación}
+
+\begin{itemize}
+    \item ¿Qué patrones de demanda pueden identificarse a partir del análisis de datos históricos de matrícula y cargas académicas?
+    \item ¿Cuáles son las variables académicas y normativas que influyen con mayor peso en la apertura de secciones académicas?
+    \item ¿Cómo puede diseñarse un modelo predictivo basado en aprendizaje automático que permita estimar la demanda futura de secciones académicas?
+    \item ¿Qué nivel de desempeño presenta el modelo predictivo al ser evaluado con datos históricos de prueba?
+\end{itemize}
+
+
+\section{Justificación de la investigación}
+
+\subsection{Justificación Teorica y Técnica}
+
+La presente investigación se justifica en la necesidad de superar las limitaciones de los modelos estadísticos tradicionales utilizados en la gestión educativa. La literatura reciente demuestra que métodos como la regresión lineal o logística son insuficientes para capturar la complejidad no lineal del comportamiento estudiantil actual\cite{shao_machine_2021}. Al implementar algoritmos de aprendizaje automático, específicamente Random Forest, este estudio busca llenar un vacío metodológico, validando herramientas que permiten jerarquizar la importancia de variables demográficas y académicas con una precisión superior al análisis probabilístico estándar\cite{shao_machine_2021}.
+
+Asimismo, se aborda la programación de horarios como un problema de optimización combinatoria clasificado como NP-Hard\cite{abdipoor_meta-heuristic_2023}. La investigación aporta valor teórico al demostrar que la gestión de restricciones "duras" y "blandas" en la asignación de recursos no es eficiente con planificación manual, justificando metaheurísticas y modelos predictivos para soluciones viables en espacios de búsqueda de alta complejidad\cite{abdipoor_meta-heuristic_2023}.
+
+\subsection{Justificación Práctica y Administrativa}
+
+Desde una perspectiva operativa, el proyecto responde a la desconexión crítica diagnosticada entre la infraestructura tecnológica y la toma de decisiones estratégicas en las universidades latinoamericanas\cite{gallegos_macias_sistemas_2023}. A pesar de que las instituciones generan grandes volúmenes de datos, la falta de una cultura de análisis ha convertido a los sistemas de información en simples repositorios pasivos\cite{gallegos_macias_sistemas_2023}. Esta propuesta ofrece una solución práctica mediante un sistema de soporte a la decisión (DSS) que transforma datos históricos aislados en inteligencia accionable, permitiendo a las autoridades anticipar la demanda real de cupos y evitar la gestión reactiva.
+
+Además, esta investigación responde a los retos de la educación híbrida. Datos de 2025 indican que el 45\% de los problemas docentes se deben a aulas incompatibles con la modalidad virtual\cite{guadalupe_beltran_desafios_2025}. El sistema se justifica al incluir variables de infraestructura física y digital en la planificación, adaptando los espacios a los requisitos técnicos actuales.
+
+\subsection{Justificación Económica}
+
+La optimización de la oferta académica impacta directamente la sostenibilidad financiera de la institución. Predecir mal las tasas de inscripción genera costos innecesarios, como abrir secciones con baja demanda o saturar otras que exigen contratar docentes de emergencia\cite{shao_machine_2021}. Esta investigación reduce el error predictivo, mejora la eficiencia presupuestaria y ajusta los recursos a la demanda real, esencial en la Cuarta Revolución Industrial\cite{shenkoya_sustainability_2023}.
+
+\subsection{Justificación Social}
+
+Finalmente, el impacto principal es en el éxito estudiantil. La escasez de cupos en asignaturas clave, conocidas como "cuellos de botella", interrumpe el avance curricular y causa retrasos académicos\cite{stavrinides_course-prerequisite_2023}. Mediante análisis de redes, el sistema identifica estos puntos críticos y predice el riesgo de deserción por factores financieros y académicos con una precisión del 98.6\%\cite{shilbayeh_predicting_2021}. De este modo, optimiza procesos, promueve la continuidad educativa, permite el avance sin obstáculos administrativos, reduce las tasas de abandono y facilita la inserción oportuna en el mercado laboral.
+
+
+\section{Alcances y limitaciones}
+
+Esta investigación comprende el diseño y desarrollo de un prototipo funcional de plataforma digital basada en inteligencia artificial para predecir la demanda académica en UNAH-Comayagua. El sistema procesará registros de intención de matrícula y datos históricos mediante algoritmos de regresión y clasificación. El alcance incluye la creación de perfiles de usuario, un módulo de análisis predictivo y un dashboard de visualización para autoridades. Entre las limitaciones, se reconoce que la variabilidad en la calidad de los datos históricos puede afectar la precisión inicial, y que las pruebas piloto se limitarán a una muestra representativa de X estudiantes debido a restricciones temporales.
+
+\begin{itemize}
+    \item \textbf{Viabilidad Técnica}: El proyecto se desarrollará utilizando el lenguaje de programación Python, empleando librerías especializadas como Pandas y Scikit-Learn. La gestión de datos se realizará mediante el motor de base de datos MySQL. La interfaz de usuario será implementada con el framework Streamlit y el código fuente será auditado mediante un repositorio en GitHub.
+    \item \textbf{Viabilidad Económica y Operativa}: La investigación cuenta con la viabilidad operativa al disponer del apoyo de la Jefatura de Departamento de UNAH-Comayagua para el acceso a la información. Es económicamente viable al basarse en tecnologías de código abierto, no requiriendo inversión financiera directa por parte de la institución.
+\end{itemize}

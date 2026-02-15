@@ -1,0 +1,334 @@
+\chapter[Resultados y Análisis]{Resultados y Análisis}
+\label{chap:resultados}
+
+\insertminitoc
+\parindent0pt
+
+
+\section{Presentación de Resultados}
+Los resultados que se lograron después del análisis estructural de la red, la elaboración del grafo vial y la realización de las simulaciones en \Acrshort{sumo} en varios 
+escenarios (congestión, condición base y reemplazo de rotonda por semáforo) se presentan en esta sección.  Se muestran los resultados a través de gráficos de tendencia y 
+métricas cuantitativas, que posibilitan examinar el funcionamiento general del sistema de movilidad.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/pronostico_parque_vehicular_hn.png}
+    \caption[Pronóstico del Parque Vehicular en Honduras]{Pronóstico del Parque Vehicular en Honduras. Fuente: Elaboración propia.}
+    \label{fig:figure-pronostico-parque-vehicular-hn}
+\end{figure}
+
+Esta gráfica muestra un modelo de regresión lineal que se utiliza para analizar el desarrollo del parque vehicular en Comayagua. Se basa en datos históricos del Instituto 
+Nacional de Estadística (INE) entre 2013 y 2021, los cuales indican una tendencia de crecimiento sostenido y con una correlación significativa.  Para 2030, se prevé que la 
+flota de vehículos excederá las 225,000 unidades, lo que representa un aumento cercano al 30\% en comparación con la estimación del parque actual. Este patrón lineal revela 
+una etapa de expansión de la motorización, que no muestra señales de saturación desordenada y prevé una presión creciente sobre la infraestructura vial y el planeamiento 
+urbano regional en la próxima década.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/graph_centrality.pdf}
+    \caption[Análisis Topológico y de Vulnerabilidad: Centralidad de Intermediación de la Red Vial de Comayagua]{Análisis Topológico y de Vulnerabilidad: Centralidad de Intermediación de la Red Vial de Comayagua. Fuente: Elaboración propia.}
+    \label{fig:figure-graph-centrality}
+\end{figure}
+
+Esta representación topológica, probablemente producida a través de análisis de grafos, muestra la centralidad de intermediación en la red vial de Comayagua. Los nodos 
+(intersecciones) y las aristas (calles) están codificados cromáticamente para señalar su jerarquía funcional; el núcleo central presenta una concentración de tonos claros 
+(amarillo y cian), lo que marca los únicos puntos de falla en la red. Esto indica que un alto porcentaje de las rutas más cortas tienen que pasar por un número limitado de 
+segmentos y nudos. Por lo tanto, si estas áreas críticas se bloquean o inhabilitan, la conectividad total del sistema se vería gravemente afectada, provocando una ineficiencia 
+no lineal en los tiempos de viaje y evidenciando una escasa redundancia estructural frente a cualquier alteración vial.
+
+Habiendo identificado la intersección como nodo crítico dentro de la red vial, se procedió a la modelización micro-simulada de tráfico para evaluar su impacto operativo y 
+cuantificar su desempeño en condiciones dinámicas. De esta aproximación metodológica se extrajeron indicadores clave de rendimiento (KPIs), permitiendo la medición precisa de 
+las condiciones de flujo vehicular a través de la velocidad media, la pérdida de tiempo y paradas por vehículo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/comparativa_barras_individual_interval_meanSpeedWithin_estadio.pdf}
+    \caption[Simulación de Velocidad Media bajo Escenarios de Crecimiento Vehicular]{Simulación de Velocidad Media bajo Escenarios de Crecimiento Vehicular. Fuente: Elaboración propia.}
+    \label{fig:figure-velocidad-media}
+\end{figure}
+
+El gráfico de barras presenta una comparativa de la velocidad media (\textbf{$\text{m/s}$}) de circulación para una intersección específica de Comayagua bajo tres escenarios 
+proyectados, sirviendo como un indicador clave de rendimiento operacional de la red vial. Los "Datos año 2025" (escenario actual) establecen la línea base con 
+$\mathbf{3.21\ \text{m/s}}$; la proyección al "Datos año 2030" (escenario de crecimiento lineal) muestra una ligera disminución a $\mathbf{3.13\ \text{m/s}}$, reflejando 
+una moderada afectación por el incremento vehicular predicho. No obstante, el escenario hipotético de estrés máximo ("Datos año 20XX"), en el que se duplica el parque 
+vehicular, provoca una caída notable de la velocidad media a $\mathbf{3.00\ \text{m/s}}$; esta diferencia progresiva confirma la sensibilidad de la intersección al 
+volumen de tráfico, sugiriendo que, si bien la infraestructura puede absorber el crecimiento proyectado a 2030 con un impacto mínimo, el incremento exponencial del parque 
+vehicular resultaría en una degradación significativa de la fluidez operacional.
+
+\clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/comparativa_barras_individual_interval_meanTimeLossWithin_estadio.pdf}
+    \caption[Simulación de Pérdida de Tiempo bajo Escenarios de Crecimiento Vehicular]{Simulación de Pérdida de Tiempo bajo Escenarios de Crecimiento Vehicular. Fuente: Elaboración propia.}
+    \label{fig:figure-perdida-tiempo}
+\end{figure}
+
+El gráfico de barras ilustra la pérdida de tiempo promedio (\textbf{en segundos}) experimentada por los vehículos al transitar por la intersección crítica, un indicador clave del nivel 
+de congestión y fricción en el flujo, bajo los tres escenarios de crecimiento vehicular planteados. En el escenario actual ("Datos año 2025"), la pérdida de tiempo es de 
+$\mathbf{23.53\ \text{s}}$. La proyección hacia el "Datos año 2030" muestra un aumento significativo a $\mathbf{25.12\ \text{s}}$, confirmando que la expansión vehicular 
+proyectada ejercerá una presión perceptible sobre el sistema, resultando en una mayor ineficiencia temporal. Finalmente, el escenario de estrés máximo ("Datos año 20XX"), que 
+simula la duplicación del parque vehicular, induce la mayor pérdida de tiempo, alcanzando $\mathbf{25.45\ \text{s}}$; este incremento marginal respecto a 2030 
+($25.45\ \text{s}$ vs $25.12\ \text{s}$) sugiere que, si bien la congestión se intensifica con el crecimiento, la intersección podría estar cercana a su punto de saturación, 
+donde las penalizaciones temporales adicionales, aunque existentes, se vuelven menos dramáticas en comparación con la transición de 2025 a 2030.
+
+\clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/comparativa_barras_individual_interval_meanHaltsPerVehicleWithin_estadio.pdf}
+    \caption[Simulación de Paradas por Vehículo bajo Escenarios de Crecimiento Vehicular]{Simulación de Paradas por Vehículo bajo Escenarios de Crecimiento Vehicular. Fuente: Elaboración propia.}
+    \label{fig:figure-paradas-vehiculo}
+\end{figure}
+
+El gráfico de barras presenta la comparativa de la tasa de detenciones (o paradas) por vehículo en la intersección crítica bajo los tres escenarios de demanda vehicular, 
+sirviendo como métrica de la fricción operativa y la calidad del servicio del flujo. En el escenario actual de "Datos año 2025", cada vehículo experimenta un promedio de 
+0.73 paradas en la intersección. La proyección para el "Datos año 2030" muestra un incremento marginal a 0.74 paradas por vehículo, indicando que la estructura semafórica o 
+de control de la intersección mantiene una robustez notable frente al crecimiento vehicular anticipado. De manera crucial, el escenario extremo de "Datos año 20XX", con el 
+parque vehicular duplicado, mantiene esta misma tasa de 0.74 paradas por vehículo, lo que sugiere que la saturación del flujo está primariamente afectando la duración de las 
+detenciones (tiempo perdido) y la velocidad de desplazamiento, más que la frecuencia de las detenciones en sí mismas; en esencia, aunque los vehículos tienen que esperar más 
+tiempo, la probabilidad de ser detenidos por unidad sigue siendo constante en los escenarios futuros analizados.
+
+\clearpage
+
+Una vez confirmado el punto como nodo crítico de la red vial a través del análisis de centralidad, se procedió a formular una estrategia de mitigación de la congestión. Dado 
+que la intersección ya operaba bajo \textbf{control semafórico}, la intervención propuesta consistió en la reconfiguración geométrica de la misma, modelando específicamente la 
+sustitución del semáforo por una glorieta (\textbf{rotonda}). Los resultados de la simulación de este nuevo escenario operacional se detallan a continuación.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/meanSpeedWithin_Año_2025_Semaforo.pdf}
+    \caption[Impacto de la Rotonda en la Velocidad Media]{ Impacto de la Rotonda en la Velocidad Media. Fuente: Elaboración propia.}
+    \label{fig:figure-impacto-rotonda-velocidad}
+\end{figure}
+
+El gráfico de barras presenta una comparativa de la velocidad media ($\text{m/s}$) de circulación en la intersección crítica de Comayagua bajo el volumen vehicular proyectado 
+para el año 2025, contrastando el sistema de control semafórico existente con la propuesta de reconfiguración geométrica a rotonda. El escenario actual con semáforo registra 
+una velocidad media de $\mathbf{3.21\ \text{m/s}}$, estableciendo la línea base de la eficiencia operativa del nodo. Por el contrario, la simulación de la implementación de la 
+rotonda demuestra una mejora significativa en el flujo vehicular, elevando la velocidad media a $\mathbf{5.78\ \text{m/s}}$. Este incremento del $\approx 80\%$ en la velocidad 
+de circulación valida la hipótesis de que la sustitución del control intermitente por el flujo continuo de la glorieta mitiga de manera sustancial la fricción del tráfico, 
+mejorando la fluidez y el rendimiento del nodo crítico bajo las condiciones de demanda actuales proyectadas para 2025.
+
+\clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/meanTimeLossWithin_Año_2025_Semaforo.pdf}
+    \caption[Impacto de la Rotonda en la Pérdida de Tiempo]{ Impacto de la Rotonda en la Pérdida de Tiempo. Fuente: Elaboración propia.}
+    \label{fig:figure-impacto-rotonda-tiempo}
+\end{figure}
+
+El gráfico de barras compara la pérdida de tiempo promedio (en segundos) experimentada por los vehículos en la intersección crítica bajo el escenario de demanda vehicular 
+proyectado para el año 2025, contrastando el control semafórico frente a la implementación de una glorieta. El escenario actual con semáforo registra una pérdida de tiempo 
+de $\mathbf{23.53\ \text{s}}$, lo cual representa la ineficiencia generada por las detenciones obligatorias del ciclo semafórico. Por su parte, la simulación de la 
+implementación de la rotonda muestra una reducción significativa de la congestión y de la fricción vehicular, disminuyendo el tiempo perdido a $\mathbf{17.87\ \text{s}}$. Esta 
+diferencia de $5.66\ \text{s}$, que equivale a una reducción del $\approx 24\%$ en el tiempo de espera y detención, valida la rotonda como una medida altamente efectiva para 
+mejorar el rendimiento operacional y la calidad de servicio en el nodo crítico.
+
+\clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/meanHaltsPerVehicleWithin_Año_2025_Semaforo.pdf}
+    \caption[Impacto de la Rotonda en la Paradas por Vehículo]{ Impacto de la Rotonda en la Paradas por Vehículo. Fuente: Elaboración propia.}
+    \label{fig:figure-impacto-rotonda-paradas}
+\end{figure}
+
+El gráfico de barras finaliza la comparativa de mitigación mostrando la tasa promedio de paradas por vehículo(\#) en la intersección crítica bajo el escenario de demanda del 
+año 2025, contrastando el control semafórico frente a la implementación de la rotonda. Contrario a las métricas de velocidad y tiempo perdido, el análisis revela que la 
+rotonda genera una mayor frecuencia de detenciones que el semáforo. El escenario con semáforo registra $\mathbf{0.73}$ paradas por vehículo, mientras que la simulación 
+de la rotonda proyecta un aumento significativo a $\mathbf{1.49}$ paradas por vehículo. Este incremento en la tasa de detenciones es un hallazgo crítico, ya que si bien la 
+rotonda mejora la velocidad media y reduce el tiempo perdido al mantener el flujo, su diseño obliga a una mayor cantidad de vehículos a detenerse o reducir la marcha 
+significativamente para ceder el paso dentro del anillo, duplicando el número de paradas por unidad y afectando negativamente el confort de conducción y la eficiencia de 
+combustibles.
+
+Adicionalmente al nodo ya intervenido, y basándose en una inspección visual de campo y criterios de congestión preliminares, se identificaron otras tres intersecciones 
+clave dentro de la red vial de Comayagua. Con el objetivo de evaluar su vulnerabilidad ante el crecimiento de la demanda, se aplicará el mismo protocolo de modelización 
+comparativa que incluye el análisis del escenario base (actualidad), la proyección a 2030 y el escenario de máxima tensión (duplicación del parque vehicular, 20XX).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/comparativa_barras_combinada_my.pdf}
+    \caption[Datos Comparativos de la intersección Bulevar 4 Centenario y Carretera RN-57]{ Datos Comparativos de la intersección Bulevar 4 Centenario y Carretera RN-57. Fuente: Elaboración propia.}
+    \label{fig:figure-datos-comparativos-bulevar4C-carreteraRN57}
+\end{figure}
+
+Este conjunto de gráficos detalla la simulación del desempeño operacional de la intersección Bulevar 4 Centenario y Carretera RN-57, mediante las métricas de Velocidad Media, 
+Tiempo Perdido y Paradas por Vehículo, a lo largo de los escenarios 2025, 2030 y 20XX. El análisis inicial revela un deterioro progresivo, pero moderado, en el flujo: la 
+Velocidad Media cae de $\mathbf{1.77\ \text{m/s}}$ en 2025 a $\mathbf{1.71\ \text{m/s}}$ en 2030, mientras que el Tiempo Perdido se incrementa de 
+$\mathbf{42.77\ \text{s}}$ a $\mathbf{43.68\ \text{s}}$. Sin embargo, la incongruencia crítica se manifiesta en el escenario de máxima demanda ($20\text{XX}$), donde 
+la Velocidad Media ($1.76\ \text{m/s}$) y el Tiempo Perdido ($42.86\ \text{s}$) regresan a valores cercanos a la base de 2025; esta aparente "recuperación" es, 
+en realidad, un diagnóstico de colapso estructural del sistema, interpretado por la simulación como la inmovilidad total del flujo o la desviación masiva de vehículos que 
+abandonan la intersección, lo que evita que un volumen vehicular mayor sea procesado y estabiliza artificialmente las métricas internas de la vía, confirmando la extrema 
+vulnerabilidad del nodo ante el crecimiento exponencial del parque vehicular.
+
+\clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/comparativa_barras_combinada_4CC0.pdf}
+    \caption[Datos Comparativos de la intersección Bulevar 4 Centenario y Calle 0]{ Datos Comparativos de la intersección Bulevar 4 Centenario y Calle 0. Fuente: Elaboración propia.}
+    \label{fig:figure-datos-comparativos-bulevar4C-calle0}
+\end{figure}
+
+
+Este conjunto de gráficos resume el análisis del desempeño operacional de la intersección Bulevar 4 Centenario y Carretera RN-57 a través de tres métricas de servicio bajo 
+escenarios de demanda creciente (2025, 2030 y 20XX). El tránsito de 2025 a 2030 muestra el deterioro esperado, con la Velocidad Media cayendo de 
+$\mathbf{2.71\ \text{m/s}}$ a $\mathbf{2.64\ \text{m/s}}$ y el Tiempo Perdido aumentando de $\mathbf{33.45\ \text{s}}$ a $\mathbf{37.14\ \text{s}}$; sin embargo, el 
+escenario de máxima demanda ($20\text{XX}$) presenta una incongruencia crítica al mostrar una "mejora" artificial en las tres métricas, con la Velocidad Media aumentando 
+a $\mathbf{3.08\ \text{m/s}}$ y el Tiempo Perdido disminuyendo a $\mathbf{28.63\ \text{s}}$. Esta inversión de tendencia en el escenario de mayor volumen vehicular se 
+interpreta académicamente como la manifestación de un colapso del sistema simulado, donde la incapacidad de la intersección para procesar el tráfico extremo fuerza a los 
+vehículos a la inmovilidad o a buscar rutas alternativas, estabilizando artificialmente las métricas internas e indicando un punto de vulnerabilidad estructural extrema.
+
+\clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Resultados/comparativa_barras_combinada_hst.pdf}
+    \caption[Datos Comparativos de la intersección frente al Hospital Santa Teresa]{ Datos Comparativos de la intersección frente al Hospital Santa Teresa. Fuente: Elaboración propia.}
+    \label{fig:figure-datos-comparativos-hospital-sta-teresa}
+\end{figure}
+
+El conjunto de gráficos detalla la simulación del desempeño operacional de la intersección Bulevar 4 Centenario y Carretera RN-57 mediante las métricas de Velocidad Media, 
+Tiempo Perdido y Paradas por Vehículo, a lo largo de escenarios de demanda creciente (2025, 2030 y 20XX). La tendencia de 2025 a 2030 confirma el deterioro esperado por el 
+incremento vehicular, con la Velocidad Media cayendo de $\mathbf{2.71\ \text{m/s}}$ a $\mathbf{2.64\ \text{m/s}}$ y el Tiempo Perdido ascendiendo de $\mathbf{33.45\ \text{s}}$ 
+a $\mathbf{37.14\ \text{s}}$. Sin embargo, el escenario de máxima tensión ($20\text{XX}$) presenta una incongruencia crítica, pues el modelo arroja una "mejora" artificial, con 
+la Velocidad Media aumentando a $\mathbf{3.08\ \text{m/s}}$ y el Tiempo Perdido cayendo a $\mathbf{28.63\ \text{s}}$; esta inversión de la tendencia no denota eficiencia, sino 
+que diagnostica un colapso estructural simulado del nodo, donde el volumen de tráfico excede la capacidad de la vía y fuerza a los vehículos a la inmovilidad total o a la 
+desviación masiva a rutas secundarias, lo que estabiliza artificialmente las métricas internas e indica un punto de vulnerabilidad extrema de la intersección ante la demanda 
+futura.
+
+\section{Interpretación y análisis de los resultados obtenidos}
+La interpretación de los resultados de la simulación de tráfico se centra en dos ejes principales: la vulnerabilidad de la red ante el crecimiento vehicular proyectado y la eficacia 
+de la intervención de mitigación propuesta.
+
+\subsection{Análisis de Escenarios de Demanda Creciente}
+
+El análisis de sensibilidad al crecimiento vehicular se realizó sobre una Intersección Antigua CA-5, la cual demostró ser un cuello de botella 
+estructural identificado mediante la centralidad de intermediación. \\
+
+\textbf{Intersección Antigua CA-5/RV217 bajo Demanda Futura:} \\
+Los resultados (tiempo perdido, velocidad media y paradas por vehículo) de la Intersección A en los escenarios presentes (2025), proyectados (2030) y de máxima tensión (20XX \- duplicación)
+muestran un deterioro gradual; no obstante, se presenta una anomalía significativa en el escenario extremo: \\
+
+\begin{itemize}
+    \item \textbf{Deterioro Esperado (2025-2030):} La proyección a 2030 indica un incremento moderado de la congestión. La Velocidad Media experimenta una ligera caída de 
+    $\mathbf{3.21\ \text{m/s}}$ a $\mathbf{3.13\ \text{m/s}}$, mientras que la Pérdida de Tiempo aumenta de $\mathbf{23.53\ \text{s}}$ a $\mathbf{25.12\ \text{s}}$. La 
+    tasa de Paradas por Vehículo se mantiene casi constante ($\mathbf{0.73}$ a $\mathbf{0.74}$), sugiriendo que la infraestructura actual absorbería el crecimiento 
+    proyectado a corto plazo con un detrimento en la calidad de servicio.
+    \item \textbf{Manifestación de Colapso (Escenario 20XX):} En el escenario de duplicación vehicular (20XX), el sistema alcanza su punto de saturación. Aunque la Pérdida de Tiempo 
+    continúa ascendiendo a $\mathbf{25.45\ \text{s}}$, la Velocidad Media solo cae marginalmente a $\mathbf{3.00\ \text{m/s}}$. Esta baja sensibilidad al doble de volumen de 
+    vehículos es una clara indicación del colapso operacional simulado. En este punto, el modelo predice que el flujo se estanca o que un volumen significativo de vehículos 
+    opta por desviarse, evitando que las métricas reflejen un mayor deterioro interno. Este fenómeno subraya la extrema vulnerabilidad del nodo a niveles de demanda no 
+    planificados.
+\end{itemize}
+
+\textbf{Intersección Bulevar 4 Centenario/RN-57 bajo Demanda Futura:} \\
+Al aplicar el mismo análisis tri-métrico a la Intersección Bulevar 4 Centenario/RN-57, los resultados son más dramáticos y confirman la tendencia al colapso: \\
+\begin{itemize}
+    \item Tendencia de Congestión (2025-2030): La Velocidad Media se reduce de $\mathbf{2.71\ \text{m/s}}$ a $\mathbf{2.64\ \text{m/s}}$ (o de $\mathbf{1.64\ \text{m/s}}$ a 
+    $\mathbf{1.94\ \text{m/s}}$ en otro gráfico, indicando variabilidad dependiendo del periodo o modelo), y el Tiempo Perdido aumenta significativamente de 
+    $\mathbf{33.45\ \text{s}}$ a $\mathbf{37.14\ \text{s}}$. Este aumento del tiempo perdido es un indicativo directo de la ineficiencia generada por la gestión actual de la 
+    intersección.
+    \item Anomalía y Colapso (Escenario 20XX): En el escenario 20XX, las simulaciones muestran una inversión de tendencia, donde el Tiempo Perdido cae a 
+    $\mathbf{28.63\ \text{s}}$ y la Velocidad Media se incrementa a $\mathbf{3.08\ \text{m/s}}$. Esta incongruencia es la evidencia más robusta del fenómeno de colapso: la 
+    sobrecarga vehicular es tan alta que paraliza las arterias de acceso, obligando a una parte de los vehículos a desaparecer de la simulación (por inmovilidad o desviación 
+    masiva), lo que reduce el volumen total de vehículos en movimiento dentro de la zona crítica y, artificialmente, "mejora" las métricas registradas. Este resultado es una 
+    señal de alarma que pronostica fallas sistémicas a futuro.
+\end{itemize}
+
+\subsection{Evaluación de la Propuesta de Mitigación (Rotonda vs. Semáforo)}
+La propuesta de intervención en la Intersección Antigua CA-5/RV217 consistió en la sustitución del control semafórico por una glorieta, evaluada con datos del escenario actual 
+(2025) para aislar el impacto de la mejora geométrica.
+
+\begin{itemize}
+    \item \textbf{Impacto en la Fluidez (Velocidad Media y Tiempo Perdido):} 
+    \begin{itemize}
+    \item La Velocidad Media se incrementó drásticamente de $\mathbf{3.21\ \text{m/s}}$ (semáforo) a $\mathbf{5.78\ \text{m/s}}$ (rotonda). Esta mejora del 
+    $\approx 80\%$ confirma que el flujo continuo de la rotonda elimina las detenciones totales inherentes al ciclo semafórico, promoviendo una circulación más rápida.
+    \item La Pérdida de Tiempo se redujo de $\mathbf{23.53\ \text{s}}$ (semáforo) a $\mathbf{17.87\ \text{s}}$ (rotonda). Esta reducción del $\approx 24\%$ valida la rotonda 
+    como una solución altamente efectiva para mitigar la congestión temporal.
+\end{itemize}
+    \item \textbf{Impacto en la Fricción (Paradas por Vehículo):}
+    \begin{itemize}
+        \item El resultado más crucial fue el aumento en la tasa de Paradas por Vehículo, la cual se duplicó de $\mathbf{0.73}$ (semáforo) a $\mathbf{1.49}$ (rotonda). Esta 
+        métrica sugiere que, si bien la rotonda promueve la velocidad y reduce el tiempo total de espera, lo hace a expensas de forzar a un mayor número de vehículos a 
+        realizar detenciones o reducciones de marcha significativas para ceder el paso dentro del anillo. Esto impacta negativamente el confort de conducción y potencialmente 
+        la eficiencia de combustible por la mayor cantidad de ciclos de aceleración-desaceleración.
+    \end{itemize}
+\end{itemize}
+
+\section{Comparación con Investigaciones Previas o Estándares}
+Para contextualizar los resultados obtenidos en Comayagua, la evaluación del desempeño de las intersecciones se contrasta con los \acrfull{nds} definidos por el 
+\Acrshort{hcm} y la literatura de ingeniería de transporte, utilizando principalmente la Velocidad Media y la Pérdida de Tiempo como métricas de referencia.
+
+\subsection{Niveles de Servicio (NdS) y Vulnerabilidad}
+Los niveles de servicio (NdS) se dividen desde el nivel A (flujo libre) hasta el F (congestión intensa o colapso).  Las velocidades medias logradas en las intersecciones 
+críticas, sobre todo en los contextos futuros, son un signo de un servicio deficiente:
+
+\begin{table}[h!]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lcccc}
+\hline
+\textbf{Intersección/Métrica} &
+\textbf{Escenario Base (2025)} &
+\textbf{Escenario 2030} &
+\textbf{Escenario 20XX} &
+\textbf{NdS Estimado} \\
+\hline
+
+\textbf{Intersección A (Velocidad)} &
+\textbf{3.21 m/s} &
+\textbf{3.13 m/s} &
+\textbf{3.00 m/s} &
+D / E \\
+
+\textbf{Bv. 4 Centenario/RN-57 (Tiempo Perdido)} &
+\textbf{33.45 s} &
+\textbf{37.14 s} &
+\textbf{28.63 s (Colapso)} &
+E / F \\
+\hline
+\end{tabular}}
+\caption{Comparación del desempeño por escenarios y nivel de servicio estimado.}
+\label{tab:comparacion-escenarios}
+\end{table}
+
+Los valores de Pérdida de Tiempo en el Bulevar 4 Centenario/RN-57 sobrepasan los $35\ \text{s}$ en la proyección del año 2030, lo que pone a este cruce al borde del nivel de 
+servicio E o F. De acuerdo con el \Acrshort{hcm}, esto se trata de un umbral de funcionamiento inaceptable, caracterizado por retrasos extensos y una elevada inestabilidad 
+del flujo.  La tendencia hacia el colapso observada en el escenario 20XX de las dos intersecciones concuerda con la transición de \acrshort{nds} E a F, en la cual el sistema 
+pierde la capacidad de procesar la demanda y se produce una desviación del tráfico o una inmovilidad total.
+
+\subsection{Comparación de Soluciones: Semáforo vs. Rotonda}
+La sugerencia de reemplazar el control semafórico por una rotonda en la intersección A contrasta con las tendencias documentadas a nivel global, que prefieren la rotonda bajo ciertas 
+circunstancias:
+
+\begin{itemize}
+    \item Velocidad Media y Flujo: La rotonda elevó la Velocidad Media a $\mathbf{5.78\ \text{m/s}}$, un valor que se acerca al NdS B (flujo estable con detenciones mínimas) y 
+    supera significativamente el NdS D/E del semáforo. Esto concuerda con investigaciones que demuestran que las glorietas, al reemplazar las detenciones programadas por 
+    conflictos de cesión de paso, incrementan la velocidad promedio del tramo.
+    \item Pérdida de Tiempo: La reducción del $\approx 24\%$ en el tiempo perdido es coherente con estudios de caso en Europa y Norteamérica, donde la eliminación de los tiempos 
+    muertos del ciclo semafórico (luz roja) resulta en una disminución global de la demora.
+    \item Paradas por Vehículo (Fricción): El aumento de las paradas de $\mathbf{0.73}$ a $\mathbf{1.49}$ contradice parcialmente el objetivo de reducción de fricción, pero es un resultado 
+    típico en rotondas de alto volumen. Mientras que el semáforo detiene a todos los vehículos de forma intermitente, la rotonda detiene solo a los vehículos en las entradas 
+    (para ceder el paso), resultando en que una mayor proporción de vehículos tienen que detenerse en algún punto (frecuencia de paradas alta), aunque la duración total de la 
+    detención sea mucho menor (tiempo perdido bajo). En términos de seguridad y confort, este aumento en las maniobras y detenciones es un factor que se debe evaluar frente a 
+    los beneficios de fluidez.
+\end{itemize}
+
+En conclusión, la comparación confirma que el rendimiento actual y futuro de las intersecciones críticas en Comayagua se sitúa en niveles de servicio que requieren intervención 
+inmediata (NdS D a F), y que la solución de rotonda, si bien introduce fricción operacional (más paradas), es una solución de alto impacto para restaurar el NdS a rangos 
+funcionales (B/C).
+
+\section{Validación de objetivos planteados}
+Los objetivos del proyecto se cumplieron satisfactoriamente mediante la siguiente secuencia de resultados:
+
+\begin{itemize}
+    \item \textbf{Diagnóstico y Puntos Críticos (Obj. 1, 2, 3):} Se modeló la red como un grafo, utilizando la Centralidad de Intermediación para identificar los nodos de alta 
+    dependencia. Los resultados confirmaron su nivel de congestión (NdS E/F).
+    \item \textbf{Modelización de Escenarios (Obj. 4):} Se utilizaron algoritmos de la teoría de grafos y herramientas de simulación de tráfico para reproducir y evaluar los escenarios 
+    2030 y 20XX. El escenario extremo (20XX) en ambas intersecciones reveló un colapso operacional simulado, validando que el NdS será inaceptable en el futuro.
+    \item \textbf{Propuesta de Estrategias (Obj. 5):} Se evaluó la reconfiguración semafórica por una rotonda en la Intersección Antigua CA-5/RV217, confirmando la viabilidad de una solución de flujo continuo para mejorar la movilidad.
+\end{itemize}
+

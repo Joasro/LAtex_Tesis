@@ -1,0 +1,328 @@
+\chapter[Metodología]{Metodología}
+\label{ch:metodologia}
+
+\insertminitoc
+\parindent0pt
+
+\section{Tipo de investigación}
+Esta investigación se clasifica como \textbf{aplicada}, ya que su objetivo central es desarrollar soluciones prácticas y efectivas para un problema real: la congestión del tráfico 
+urbano en la ciudad de Comayagua. Es aplicada porque trasciende el plano conceptual y se orienta directamente al diseño, construcción e implementación de un modelo 
+tecnológico basado en teoría de grafos y simulación computacional, cuyo propósito es analizar y mejorar el flujo vehicular en un entorno urbano específico.
+
+El enfoque adoptado prioriza la intervención práctica, utilizando herramientas computacionales para representar la red vial como un grafo, evaluar su comportamiento estructural y 
+simular distintos escenarios de movilidad. La investigación inicia con un diagnóstico integral del estado del tráfico, identificando los puntos críticos de congestión, los 
+patrones horarios y las características físicas de las intersecciones; esta base empírica permite sustentar la fase de modelado y simulación.
+
+Además, se emplean técnicas estadísticas y algoritmos avanzados para analizar las causas subyacentes de 
+los patrones de tráfico y sus variables determinantes. La aplicación de estos métodos tiene una finalidad 
+instrumental: facilitar tanto la simulación del comportamiento vehicular como la implementación directa 
+de estrategias inteligentes que reduzcan los embotellamientos.
+
+En síntesis, la investigación se considera aplicada porque articula teoría y práctica para generar herramientas tecnológicas orientadas a la solución de un problema urbano 
+concreto, contribuyendo a mejorar la eficiencia, la movilidad y la sostenibilidad del sistema de transporte en Comayagua.
+
+\section{Diseño Metodológico}
+La presente investigación se desarrolla bajo un \textbf{enfoque cuantitativo}, orientado a analizar el comportamiento del tráfico vehicular mediante datos medibles y técnicas 
+matemáticas aplicadas a la teoría de grafos. Este enfoque permite estudiar el tránsito desde una perspectiva objetiva, comparando condiciones, identificando patrones y 
+evaluando la estructura de la red vial con precisión y consistencia.
+
+El uso del método cuantitativo resulta adecuado debido a que el problema de congestión en Comayagua puede describirse a partir de variables observables y cuantificables, 
+tales como el volumen vehicular, los tiempos de espera, la velocidad promedio, la capacidad de las intersecciones y la conectividad entre las vías. El análisis numérico de 
+estos datos es fundamental para comprender el funcionamiento real de la movilidad urbana y detectar los puntos donde se producen mayores cargas o interrupciones del flujo.
+
+Durante distintos periodos del día se registraron datos relacionados con el flujo vehicular, los tiempos de espera y la densidad de tráfico en puntos estratégicos de la ciudad. 
+Estas mediciones fueron realizadas con rigor para asegurar la coherencia y fiabilidad de los resultados. Aunque los valores obtenidos representan estimaciones, su análisis 
+permite aproximarse al comportamiento habitual del tránsito en condiciones normales.
+
+\section{Involucrados en la investigación}
+En toda investigación orientada al estudio del tráfico vehicular, resulta esencial identificar a los involucrados, es decir, los \textbf{actores} que influyen o son afectados por la 
+dinámica de movilidad urbana. Reconocerlos permite comprender de manera más precisa cómo se estructura y se comporta el sistema vial de Comayagua, y facilita la interpretación 
+de los datos recolectados durante el trabajo de campo.
+
+La caracterización de estos actores también contribuye a contextualizar los resultados obtenidos mediante los modelos basados en teoría de grafos y las simulaciones realizadas, 
+ya que cada grupo aporta información, necesidades y perspectivas distintas sobre el funcionamiento real del tránsito. De esta forma, identificar a los involucrados se 
+convierte en un paso clave para analizar el sistema vial de manera integrada y coherente.
+
+\subsection{Principales involucrados}
+El grupo de relevancia está conformado por los \textbf{conductores}, quienes constituyen el eje central del 
+sistema de movilidad. Su comportamiento, decisiones y hábitos de conducción influyen directamente en la 
+fluidez del tráfico y en la aparición de congestiones. Durante el proceso de observación se identificó 
+que muchos de los retrasos y embotellamientos se originan por maniobras inadecuadas, paradas en lugares 
+no autorizados o una baja capacidad de anticipación ante los cambios del flujo vehicular. Comprender 
+estos patrones de comportamiento fue, ya que permite asociar las variaciones del flujo vehicular no solo 
+a la capacidad física de las vías, sino también a los factores humanos que inciden en la eficiencia del 
+tránsito.
+
+\subsection{Otros involucrados}
+Aunque estos grupos no fueron incorporados como variables cuantitativas en el análisis, se mencionan 
+debido a su influencia significativa en el flujo vehicular. Los \textbf{usuarios} del transporte 
+público, tales como taxis y autobuses, desempeñan un rol dual: facilitan la movilidad de muchas personas, 
+pero sus paradas frecuentes en sitios no autorizados y la competencia por clientes en vías concurridas 
+aumentan la congestión. La falta de puntos establecidos para el ascenso y descenso de pasajeros, junto al 
+elevado número de vehículos en ciertas rutas, contribuye a deteriorar la fluidez del tráfico, 
+especialmente en horarios de mayor demanda.
+
+Por otro lado, los \textbf{peatones}, aunque no operan vehículos, inciden directamente en la dinámica del 
+tránsito. La ausencia de infraestructuras adecuadas, como puentes peatonales o semáforos exclusivos, y 
+los cruces fuera de las zonas permitidas o en momentos inadecuados, generan demoras y obstaculizan el 
+desplazamiento vehicular. 
+
+Finalmente, las \textbf{autoridades municipales} responsables de la gestión vial, si bien su intervención en el 
+estudio fue de carácter observacional, resultan clave en la regulación del tráfico mediante la 
+implementación de medidas como la reprogramación de semáforos, restricciones de giros y delimitación de 
+zonas para carga y descarga, las cuales pueden modificar sustancialmente las condiciones de movilidad 
+urbana. Por ello, los resultados obtenidos con las simulaciones basadas en inteligencia artificial se 
+diseñaron para apoyarlos en la toma de decisiones estratégicas.
+
+\section{Técnicas e Instrumentos de recolección de datos}
+La recolección de datos constituye una fase fundamental dentro de la metodología de esta investigación, 
+ya que permite obtener la información base para el análisis, modelado y simulación del tráfico vehicular 
+en la ciudad de Comayagua. Los datos empleados han sido obtenidos a partir de 
+{\textbf{observaciones directas}} y estimaciones basadas en la experiencia personal del investigador, complementadas 
+con fuentes secundarias de carácter técnico y municipal. Este enfoque, si bien limita la precisión 
+absoluta de los datos, proporciona una aproximación razonable a las condiciones reales del entorno vial, 
+suficiente para efectos de simulación y análisis en entornos virtuales como \acrshort{sumo}.
+
+La técnica principal utilizada fue la observación sistemática no participante, la cual consistió en 
+registrar manualmente los comportamientos del tráfico durante diferentes franjas horarias (pico matutino, 
+mediodía y vespertino), en puntos estratégicos de la ciudad donde se concentra la mayor afluencia 
+vehicular. Estos puntos incluyeron las principales arterias viales de Comayagua, como el bulevar Roberto
+Romero Larios, la carretera CA-5. En cada sitio se observó la densidad del tráfico, los tipos de 
+vehículos predominantes, las velocidades promedio y los tiempos aproximados de espera en intersecciones.
+Además de la observación, se aplicó una técnica de estimación de flujos vehiculares basada en el conteo 
+visual y la proyección por intervalos de tiempo. Esta técnica consistió en medir la cantidad promedio de 
+vehículos que transitan por una vía durante lapsos de 10 a 15 minutos, para luego extrapolar los valores 
+a una hora completa.
+
+En cuanto a los instrumentos utilizados, se emplearon herramientas digitales que facilitaron la 
+recopilación y organización de la información. Entre ellas destacan Google Maps, OpenStreetMap y Waze, 
+utilizadas para identificar y delimitar las áreas de estudio, obtener coordenadas geográficas precisas y 
+trazar rutas de desplazamiento.
+También se recurrió al software \acrshort{sumo} como instrumento de análisis indirecto, ya que su módulo de 
+generación de tráfico (\textbf{RandomTrips.py}) permitió contrastar los valores observacionales con escenarios 
+simulados. De esta forma, los datos recolectados manualmente se tradujeron en parámetros digitales 
+(rutas, velocidades, tasas de inserción vehicular), integrándose dentro de un modelo virtual del tráfico 
+de Comayagua. Esta fase de digitalización de datos fue fundamental para vincular la observación empírica 
+con el análisis cuantitativo, garantizando así la coherencia metodológica del estudio.
+
+Finalmente, el uso de técnicas mixtas de registro observación directa, conteo visual y modelado en 
+software proporcionó una base sólida para el análisis comparativo entre el flujo vehicular observado y 
+los resultados generados por la simulación. Si bien las limitaciones inherentes a la falta de 
+instrumentación electrónica reducen la exactitud en términos absolutos, el objetivo central del estudio 
+no radica en la medición exacta, sino en la evaluación de la aplicabilidad de la inteligencia artificial 
+como herramienta de optimización del tráfico vehicular. Por tanto, las técnicas de recolección empleadas 
+son adecuadas para demostrar la viabilidad práctica del modelo propuesto en contextos urbanos con 
+recursos tecnológicos limitados, como el caso de Comayagua.
+
+\section{Procedimiento}
+El procedimiento de esta investigación se estructuró mediante una secuencia metodológica compuesta por diversas fases interrelacionadas, diseñadas para garantizar un proceso 
+sistemático, replicable y alineado con los objetivos propuestos. Cada fase aborda un componente específico del estudio, desde la observación empírica del entorno vial hasta 
+la validación final del modelo de simulación. El enfoque empleado es de carácter aplicado, puesto que busca generar información útil para la gestión del tráfico urbano en 
+Comayagua mediante herramientas cuantitativas, técnicas de modelado y métodos basados en la teoría de grafos, permitiendo obtener conclusiones medibles y transferibles a 
+contextos urbanos similares. \\
+
+\textbf{Fase 1: Observación y diagnóstico del entorno vial} \\
+La primera fase consistió en un reconocimiento empírico del sistema vial de Comayagua, mediante visitas de campo y observaciones directas en distintos puntos de la ciudad. Se 
+identificaron las principales vías de circulación, intersecciones críticas y zonas donde se produce la mayor congestión vehicular. Durante esta etapa, se levantaron datos 
+aproximados sobre la cantidad de vehículos que transitan en horas pico. Este diagnóstico inicial permitió establecer una línea base del flujo vehicular, necesaria para la 
+posterior simulación del entorno urbano. \\
+
+\textbf{Fase 2: Manejo y Ordenamiento de la Información Recopilada} \\
+Tras la adquisición de los datos, estos fueron organizados y depurados meticulosamente en hojas de cálculo, categorizándolos por clase, instante de registro y coordenadas 
+geográficas. A continuación, la información fue migrada a un formato que se integrara sin problemas con las plataformas de simulación en uso. Dicha organización hizo posible 
+el establecimiento de variables como la congestión vehicular, la extensión de las rutas y la cadencia de tránsito. Si bien los datos se obtuvieron mediante la mera observación 
+y ciertos cálculos, el tratamiento cuantitativo aseguró que los valores integrados en la simulación reflejaran de manera fiel y lógica la dinámica verdadera del tráfico. Esta 
+etapa se centró en alistar los datos numéricos para nutrir el modelo informático.\\
+
+\textbf{Fase 3: Análisis de la red vial aplicando la teoría de grafos} \\
+En esta fase se procedió a representar la red vial de Comayagua mediante un grafo dirigido y ponderado, donde los nodos corresponden a intersecciones y las aristas a segmentos 
+viales. A partir de esta estructura, se aplicaron métricas fundamentales de la teoría de grafos, tales como:
+
+\begin{itemize}
+    \item \textbf{Grado de entrada y salida}, para identificar intersecciones con mayor carga estructural.
+    \item \textbf{Caminos mínimos}, útiles para determinar trayectos más eficientes.
+    \item \textbf{Centralidades} (betweenness, closeness, degree), que permitieron reconocer nodos críticos y posibles cuellos de botella.
+    \item \textbf{Componentes conexas y subgrafos relevantes}, para comprender la coherencia interna del sistema vial.
+\end{itemize}
+
+Este análisis permitió detectar vulnerabilidades, patrones topológicos y zonas de alto impacto en la dinámica de tráfico urbano. \\
+
+\textbf{Fase 4: Modelado del entorno urbano} \\
+En esta etapa se desarrolló un modelo digital del entorno vial utilizando el software \acrshort{sumo} Los mapas fueron importados desde \textbf{OpenStreetMap} y posteriormente ajustados para 
+reflejar fielmente la realidad de Comayagua, incorporando sentidos de circulación, restricciones de giro, límites de velocidad, semáforos y jerarquías de vías. La estructura 
+construida en \acrshort{sumo} se alineó con el grafo previamente generado, permitiendo que cada elemento del modelo matemático tuviera su equivalente en la simulación. El propósito 
+principal del modelado fue disponer de una representación dinámica del sistema vial para probar escenarios y contrastar el comportamiento de la red bajo diferentes condiciones. \\
+
+
+\textbf{Fase 5: Implementación de la simulación y análisis de escenarios} \\
+Una vez completado el modelo urbano digital, se ejecutaron diversas simulaciones modificando condiciones como volumen vehicular, rutas predominantes y distribución del flujo. 
+Estas variaciones permitieron observar indicadores como demoras, velocidad promedio y saturación de intersecciones. El análisis comparativo entre escenarios permitió examinar 
+cómo la estructura del grafo influía en el rendimiento del sistema vial, y detectar puntos donde la topología de la red genera cuellos de botella o sobrecarga de flujo. En esta 
+fase, la simulación se utilizó para validar las conclusiones derivadas del análisis de grafos y para estudiar el comportamiento emergente del tráfico en condiciones controladas. \\
+
+\textbf{Fase 6: Evaluación y validación de resultados} \\
+Finalmente, se llevó a cabo un proceso de validación mediante la comparación de los resultados obtenidos en la simulación con los patrones observados durante la fase de 
+diagnóstico inicial. Se analizaron indicadores clave como reducción proyectada de congestión, duración de los desplazamientos y eficiencia del flujo vehicular. Esta evaluación 
+buscó determinar la consistencia del modelo, su capacidad para representar adecuadamente el comportamiento real del tráfico y su utilidad para apoyar la toma de decisiones en 
+la planificación vial. Los resultados confirmaron la pertinencia de utilizar teoría de grafos y simulación para identificar vulnerabilidades estructurales y proponer mejoras 
+sostenibles en la movilidad urbana.
+
+\section{Herramientas tecnológicas utilizadas}
+Para llevar a cabo este estudio, fue necesario combinar diferentes instrumentos tecnológicos que 
+facilitaron el manejo y estudio eficaz de la información sobre el tránsito de vehículos. Por su carácter 
+cuantitativo y aplicable, las herramientas seleccionadas hicieron hincapié en la simulación del tráfico 
+urbano, así como en el análisis de datos mediante \acrshort{ia}. En este apartado, se 
+detallan los recursos tecnológicos más importantes que se usaron, clasificados en tres apartados: 
+programas informáticos de simulación, lenguajes y espacios de programación, y plataformas de soporte 
+computacional.\\
+
+\textbf{Software de Simulación}\\
+Se empleó \acrfull{sumo} para la modelación y el análisis del comportamiento del 
+tráfico vehicular. A través de la configuración de rutas, cruces, semáforos y parámetros de conducción, 
+este software hace posible reproducir con exactitud el flujo de vehículos en áreas urbanas. Se escoge 
+\acrshort{sumo} porque es flexible, puede ser utilizado con varios formatos de datos y tiene la capacidad 
+de incorporar scripts externos en Python, lo que permite comunicarse con algoritmos de \acrshort{ia}.
+La creación de un mapa digital que represente la red vial de la ciudad analizada, en este caso Comayagua, 
+con datos adquiridos de OpenStreetMap (OSM), es el fundamento del proceso de simulación en \acrshort{sumo}. 
+Después, se crearon flujos de tráfico con cifras estimadas a partir de observaciones efectivas, 
+modificando el número de vehículos, los tiempos de trayecto y los patrones de congestión. Gracias a este 
+ambiente, fue posible simular situaciones de tráfico realistas, que son esenciales para ensayar y cotejar 
+estrategias de optimización.\\
+
+\textbf{Lenguajes y entornos de programación}\\
+Se utilizó \texttt{Python} para analizar y procesar los datos, ya que este lenguaje tiene la capacidad de 
+gestionar información y una extensa disponibilidad de bibliotecas de inteligencia artificial y 
+científicas. Algunas de las librerías más utilizadas son:
+
+\begin{itemize}
+    \item \textbf{NumPy} proporcionó arreglos multidimensionales y operaciones matemáticas optimizadas, indispensables para manejar matrices, distancias, tiempos de viaje y 
+    pesos asociados a las aristas del grafo vial.
+
+    \item Por su parte, \textbf{Pandas} ofrece herramientas sofisticadas para la organización, limpieza y transformación de datos 
+    tabulares, permitiendo un manejo ágil de series temporales y tablas de datos que resultan esenciales 
+    para preparar la información del tráfico para su análisis posterior.
+
+    \item \textbf{Matplotlib} se empleó como la herramienta principal de visualización del proyecto. Permitió generar gráficos estáticos, diagramas comparativos y 
+    representaciones detalladas de flujos, distribuciones y métricas asociadas a la red vial. Su flexibilidad permitió ilustrar tendencias, identificar concentraciones de 
+    tráfico y visualizar nodos críticos, facilitando la comprensión del comportamiento de la movilidad urbana.
+
+    \item Dado que el eje central del estudio es la teoría de grafos, \textbf{NetworkX} fue una biblioteca fundamental. Con ella fue posible:
+    
+    \begin{itemize}
+        \item Construir grafos dirigidos y ponderados a partir de los datos recopilados.
+        \item Calcular métricas como centralidades, grado, componentes conexas y caminos mínimos.
+        \item Detectar nodos vulnerables y analizar la estructura global del sistema vial.
+    \end{itemize}
+
+    NetworkX permitió traducir la información empírica en representaciones matemáticas ideales para el diagnóstico estructural del tráfico urbano.
+
+    \item Para extraer y procesar la red vial desde OpenStreetMap se utilizó \textbf{OSMnx}, herramienta que permitió convertir datos cartográficos reales en un grafo utilizable 
+    dentro del análisis computacional. A través de ella fue posible obtener automáticamente:
+
+    \begin{itemize}
+        \item Nodos (intersecciones)
+        \item Aristas (segmentos viales)
+        \item Sentidos de circulación
+        \item Atributos como longitud, velocidad permitida y tipo de vía
+    \end{itemize}
+
+    OSMnx facilitó la integración entre datos reales y el modelado por grafos de la red vial.
+\end{itemize}
+
+\textbf{Plataformas de desarrollo y análisis}\\
+Durante la fase de programación y simulación se utilizaron tres plataformas principales:
+
+\begin{itemize}
+    \item \textbf{Visual Studio Code (VS Code):} entorno de desarrollo integrado (IDE) utilizado para 
+    escribir, depurar y ejecutar los scripts en Python. Su soporte para extensiones Python permitió un 
+    entorno de trabajo ordenado y eficiente.
+    \item \textbf{Google Colab:} plataforma en la nube utilizada para el entrenamiento de los modelos de 
+    inteligencia artificial y la ejecución de procesos computacionalmente intensivos. Al ofrecer recursos 
+    de GPU gratuitos, permitió mejorar los tiempos de procesamiento sin necesidad de contar con hardware 
+    avanzado.
+    \item \textbf{Microsoft Excel:} herramienta utilizada para organizar los datos generados durante las 
+    simulaciones, elaborar tablas comparativas, calcular indicadores clave (velocidad media, flujo, 
+    densidad) y crear representaciones gráficas preliminares para análisis.
+\end{itemize}
+
+\textbf{Hardware y Software}\\
+El proyecto se desarrolló en una computadora portátil Lenovo Ideapad S340 15IWL, equipada con procesador 
+Intel Core i5, 8 GB de memoria RAM y 500 GB de almacenamiento interno, con sistema operativo Windows 11. 
+Este equipo ofreció un equilibrio adecuado entre capacidad de procesamiento y portabilidad, permitiendo 
+ejecutar las simulaciones de tráfico, procesar datos y entrenar modelos de inteligencia artificial de 
+manera eficiente. La configuración del hardware fue suficiente para soportar los requerimientos 
+computacionales de SUMO y Python, siempre que los escenarios de simulación se mantuvieran dentro de un 
+tamaño y complejidad moderados.
+
+\section{Métodos de validación}
+La \textbf{validación} constituye una de las etapas más críticas dentro del proceso metodológico, pues garantiza que el modelo propuesto y las herramientas implementadas cumplan con 
+los objetivos establecidos de manera eficaz, precisa y reproducible. En el presente estudio, la validación se llevó a cabo mediante pruebas de rendimiento del modelo de 
+simulación, evaluación de métricas cuantitativas y análisis de casos de uso específicos que permitieron comprobar la aplicabilidad del sistema en distintos escenarios de 
+tráfico urbano en la ciudad de Comayagua.
+
+\subsection{Métricas de evaluación del modelo}
+Para asegurar que los hallazgos logrados mediante el análisis por teoría de grafos y la simulación en SUMO reflejan con precisión la conducta real del sistema vial de 
+Comayagua, la validación es una fase esencial.  Para evaluar la pertinencia, la confiabilidad y la consistencia del modelo desarrollado, este estudio utilizó una mezcla de 
+métodos comparativos y cuantitativos.  Estos procedimientos posibilitan comparar los patrones simulados con observaciones empíricas, comprobar la coherencia de las métricas 
+topológicas y examinar el rendimiento del sistema en diferentes contextos.  Los métodos más importantes que se usaron fueron:
+
+\subsubsection{Validación empírica de campo}
+Esta técnica se basa en cotejar los resultados que el modelo ha dado (duración de trayectos, puntos de congestión) con las observaciones directas que se han recopilado 
+durante la etapa de diagnóstico.
+
+Se implementó a través de:
+\begin{itemize}
+    \item Comparación entre los tiempos de desplazamiento simulados y los que se han medido manualmente en horas de mayor afluencia. 
+    \item Comprobación de la coincidencia entre los nodos críticos que se encuentran en el grafo y las intersecciones observadas como problemáticas. 
+    \item Verificación de los patrones de congestión que se repiten y se han observado en el campo.
+\end{itemize}
+Este procedimiento hace posible establecer si la red modelada replica de manera apropiada la dinámica vehicular real.
+
+\subsubsection{Validación estructural del grafo}
+Se comprobó la estructura de la red vial para asegurarse de que el grafo creado cumpliera con las características esperadas de una red urbana real:
+\begin{itemize}
+    \item Conexión apropiada (falta de elementos desconectados en las vías principales).
+    \item Correspondencia entre longitudes reales y pesos dados a los bordes.
+    \item Sucesión lógica entre sentidos de circulación, limitaciones y jerarquías de las vías.
+    \item Relación entre el grado de los nodos y la estructura vial que se puede observar (por ejemplo, en intersecciones primordiales o rotondas).
+\end{itemize}
+Antes de llevar a cabo simulaciones, este tipo de validación garantiza que el grafo represente con exactitud la estructura urbana.
+
+\subsubsection{Validación del modelo de simulación}
+Para verificar si el modelo en SUMO reproduce de manera apropiada conductas creíbles del tráfico urbano, se analizó su rendimiento.
+
+La validación abarcó:
+\begin{itemize}
+    \item Evaluación de la estabilidad del flujo vehicular en las simulaciones.
+    \item Evaluación de la reacción del sistema a las fluctuaciones en la demanda.
+    \item Verificación de que los patrones emergentes (colas, cuellos de botella, demoras) son congruentes con las conductas anticipadas en situaciones urbanas reales.
+\end{itemize}
+Aquellos escenarios cuyos resultados simulados se mantuvieron dentro de parámetros lógicos, basados en la literatura y la observación, fueron considerados plausibles.
+
+\subsubsection{Validación comparativa con trabajos y modelos existentes}
+Se contrastaron los resultados obtenidos con estudios similares en ciudades latinoamericanas de tamaño y estructura comparable, con el fin de verificar:
+\begin{itemize}
+    \item Si los niveles de congestión pronosticados son lógicos.
+    \item Si los patrones que se han encontrado (saturación en las horas pico, cuellos de botella en vías arteriales) concuerdan con investigaciones anteriores
+    \item Si las métricas de centralidad y su interpretación concuerdan con lo que la literatura científica dice acerca de la movilidad urbana.
+\end{itemize}
+Esta validación facilita el análisis de si la conducta de la red vial en Comayagua se ajusta a patrones típicos en ciudades que están creciendo.
+
+\subsection{Casos de uso}
+Finalmente, se desarrollaron casos de uso concretos con el propósito de validar el modelo en diferentes condiciones operativas. Estos escenarios permitieron analizar la 
+respuesta del sistema ante variaciones en el flujo vehicular, cambios en la infraestructura y modificaciones en el comportamiento del tránsito. Los casos más relevantes 
+fueron los siguientes:\\
+
+\textbf{Caso 1 \- Condición base (hora valle):} \\
+Se simuló la operación del tráfico bajo condiciones normales, con un volumen promedio de 300 vehículos por hora. Este escenario fue utilizado para calibrar los parámetros 
+iniciales del modelo y establecer una línea de referencia que sirviera como punto de comparación para los demás casos.\\
+
+\textbf{Caso 2 \- Condición de congestión (hora pico):} \\
+Se incrementó la demanda vehicular en un 30 \% con respecto al caso base, con el objetivo de analizar el efecto sobre la velocidad promedio y los tiempos de recorrido. Este 
+escenario permitió verificar la capacidad del modelo para representar situaciones de saturación y la formación de cuellos de botella dentro de la red vial. \\
+
+\textbf{Caso 3 \- Escenario de contingencia:} \\
+Se simuló la sustitución de un semáforo por una rotonda, lo que implicó modificar la estructura del grafo mediante la eliminación de la arista asociada al cruce semaforizado y 
+la incorporación de nuevas conexiones que representan el flujo circular. Esta intervención permitió analizar la capacidad del modelo para adaptarse a cambios en la 
+infraestructura vial y evaluar cómo se redistribuye el tráfico ante transformaciones físicas como obras, rediseños geométricos o mejoras operativas.\\
+
