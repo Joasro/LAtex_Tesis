@@ -4,74 +4,34 @@
 \insertminitoc
 \parindent0pt
 
-\section{Normativa legal y estándares técnicos}
-A nivel internacional, existen diversos marcos regulatorios y estándares que orientan el diseño, 
-la interoperabilidad y la seguridad de los \acrshort{its} y de las 
-aplicaciones basadas en inteligencia artificial. Algunos de los más relevantes para esta investigación 
-son:\\
+\section{Marco Legal}
+
+El desarrollo y la implementación del sistema predictivo para la optimización de la oferta académica se fundamentó en un marco regulatorio estricto, abarcando normativas institucionales, leyes nacionales de privacidad y estándares internacionales de ética algorítmica. Se determinó que, al procesar historiales académicos y encuestas de intención de matrícula, el modelo tecnológico debía garantizar la protección de la información sensible y subordinar sus resultados a las reglamentaciones vigentes, asegurando que la inteligencia artificial operara como un instrumento legal y éticamente vinculante.
+
+\subsection{Normativa Académica e Institucional de la UNAH}
+La viabilidad operativa del sistema propuesto se estructuró en estricto apego a las \textbf{Normas Académicas de la Universidad Nacional Autónoma de Honduras (UNAH)} \cite{UNAH_normas_2015}. Se estableció que el algoritmo de predicción y asignación de horarios operara en cumplimiento de los siguientes mandatos institucionales:
 
 \begin{itemize}
-    \item \textbf{ISO 14813 (Intelligent Transport Systems \- ITS Reference Model Architecture):}\\
-    Define una arquitectura de referencia para los sistemas de transporte inteligente, estableciendo 
-    una estructura común para la integración de componentes de hardware, software y comunicación dentro 
-    de los \acrshort{its}. Este estándar orienta cómo deben organizarse los subsistemas y servicios para garantizar 
-    la interoperabilidad entre distintos entornos urbanos.
-    \item \textbf{ISO 39001:2012 (Road Traffic Safety Management Systems):}\\
-    Se fundamenta en la idea de que la responsabilidad es un asunto de todos: cada entidad con injerencia 
-    en el ámbito del transporte terrestre debe velar por la protección en las carreteras \cite{lie_iso_2022}.
-    \item \textbf{IEEE 1609 \- Wireless Access in Vehicular Environments (WAVE):}\\
-    Se establece una estructura técnica y se normaliza una serie de funciones y puntos de conexión 
-    que facilitan la intercomunicación inalámbrica protegida y la entrada física dentro del automóvil \cite{noauthor_pdf_2025}.
-    \item \textbf{IEEE 2846-2022 \- Assumptions for Safety-Related Models in Automated Vehicle Behavior:}\\
-    El estándar IEEE establece las premisas básicas sobre el movimiento de los usuarios viales que un 
-    modelo de seguridad en un Sistema de Conducción Automatizada debe tener en cuenta sin falta \cite{ieee_vt_literature_2022}.
+    \item \textbf{Planificación basada en el Censo (Artículo 211):} La norma exige explícitamente que la programación académica tome en consideración el reporte del censo estudiantil y las capacidades reales instaladas para lograr el buen uso de los recursos institucionales. Esta disposición justificó legalmente el desarrollo del ``Censo Académico Inteligente'' y la intervención de la Inteligencia Artificial para procesar dicha demanda cruzándola con la infraestructura disponible.
+    \item \textbf{Carga Académica Regulada (Artículo 214):} Dictamina que la cantidad de créditos o unidades valorativas a cursar debe regularse en función del rendimiento e índice académico del estudiante. El motor de aprendizaje automático asimiló esta regla como una restricción dura, filtrando algorítmicamente las intenciones de matrícula que excedieran la carga legal permitida.
+    \item \textbf{Demanda Mínima para Secciones (Artículo 218):} Obliga a la cancelación de secciones que no alcancen la demanda mínima requerida por la institución. El Módulo de Predicción de Cupos se fundamentó en este artículo, utilizando modelos de regresión para pronosticar con precisión qué secciones alcanzarían el umbral legal, evitando la apertura de paralelos subutilizados.
 \end{itemize}
 
-\section{Normativa regional (Latinoamérica)}
-En América Latina, las políticas sobre movilidad inteligente y tecnologías de IA aún se encuentran 
-en proceso de consolidación, pero existen lineamientos relevantes emitidos por organismos regionales 
-y multilaterales:
+\subsection{Protección de Datos Personales y Habeas Data}
+El tratamiento de los expedientes estudiantiles y registros académicos se fundamentó en el derecho constitucional de \textbf{Habeas Data (Artículo 182 de la Constitución de la República de Honduras)}, operativizado a través de la \textbf{Ley de Transparencia y Acceso a la Información Pública} (Decreto No. 170-2006) \cite{transparencia_ley}. Específicamente, se acataron las directrices de su Capítulo V, donde los \textbf{Artículos 23, 24 y 25} dictaminan la protección irrestricta de los archivos personales, prohibiendo su uso para originar discriminación o daños morales.
+
+Para viabilizar el entrenamiento de los algoritmos predictivos sin vulnerar la privacidad estudiantil, la investigación se amparó en la excepción legal dispuesta en el \textbf{Artículo 44, numeral 1 del Reglamento de dicha Ley} (Acuerdo No. IAIP-0001-2008). Este precepto autoriza explícitamente el acceso y tratamiento de datos personales sin el consentimiento del individuo cuando el fin sea estrictamente estadístico o científico, a condición de someter la información a un procedimiento de disociación. En estricto cumplimiento de este mandato, y observando la obligación de seguridad informática exigida por el \textbf{Artículo 41, numeral 6} del mismo reglamento, se implementaron las siguientes políticas:
 
 \begin{itemize}
-    \item \textbf{Banco Interamericano de Desarrollo (BID):} aborda la necesidad crítica de mejorar la 
-    movilidad y el acceso al transporte para las poblaciones vulnerables en América Latina y el Caribe. 
-    La publicación define la movilidad universal como la capacidad de transportarse sin peligros y con 
-    información adecuada, y examina cómo los ITS a través de la tecnología, son herramientas esenciales 
-    para hacer que el transporte público y privado sea más accesible, seguro y confiable \cite{granada_sistemas_2018}.
-    \item \textbf{Comisión Económica para América Latina y el Caribe (CEPAL):} proporciona un panorama 
-    detallado sobre cómo la transformación digital y la IA pueden ayudar a América Latina y el Caribe a 
-    superar sus principales obstáculos de desarrollo, identificados como la baja productividad, la alta 
-    desigualdad y la debilidad institucional \cite{noauthor_superar_nodate}.
-\end{itemize} 
-
-\section{Marco Legal Nacional (Honduras)}
-En Honduras, aunque no existe una ley específica que regule directamente los sistemas inteligentes de 
-transporte o la inteligencia artificial, sí hay marcos normativos generales que inciden en su 
-desarrollo y aplicación:
-
-\begin{itemize}
-    \item \textbf{Ley de Tránsito:} Regula la circulación vehicular, las competencias de la Dirección 
-    Nacional de Vialidad y Transporte (DNVT) y la gestión de la seguridad vial.
-    \item \textbf{Ley de Telecomunicaciones (Decreto No. 185-95):} Regula el uso de redes y sistemas de 
-    comunicación, lo que incluye la transmisión de datos vehiculares y la interconexión entre \acrshort{its} 
-    en caso de que se incorporen futuras plataformas conectadas \cite{noauthor_ley_nodate}.
-    \item \textbf{Agenda Digital Honduras 2030:} Plan estratégico a nivel nacional que le da un empuje 
-    al uso de tecnologías de punta, con un enfoque importante en optimizar la infraestructura, incluyendo 
-    la red vial del país. Este esquema fomenta iniciativas de innovación tecnológica enfocadas en el 
-    desarrollo sostenible \cite{noauthor_honduras_nodate}.
+    \item \textbf{Anonimización Algorítmica (\textit{Data Masking}):} Se estructuró un conducto de Extracción, Transformación y Carga (ETL) que eliminó variables identificativas directas (nombres, números de cuenta) de las métricas de rendimiento. De este modo, los modelos de \textit{Machine Learning} procesaron volúmenes masivos de datos puramente estadísticos. 
+    \item \textbf{Seguridad de Acceso Restringido:} Las bases de datos vectoriales y los tableros analíticos se alojaron en repositorios protegidos, limitando la visibilidad de los resultados predictivos exclusivamente a la jefatura académica responsable de la programación.
 \end{itemize}
 
-\section{Consideraciones éticas y de seguridad de la información}
-Todo desarrollo basado en inteligencia artificial debe regirse por principios éticos y de seguridad. 
-En este sentido, se tomaron en cuenta los lineamientos del “Ethics Guidelines for Trustworthy AI” 
-\cite{smuha_eu_2019} de la Comisión Europea (2019), los cuales establecen que la IA debe ser:
+\subsection{Estándares Éticos y Normativa Internacional de la Inteligencia Artificial}
+Dado el impacto directo del sistema en la trayectoria académica de los estudiantes, la arquitectura del modelo se estructuró en rigurosa observancia de la \textbf{Recomendación sobre la Ética de la Inteligencia Artificial de la UNESCO} \cite{unesco_recomendacion_2021}. Se garantizó que el motor algorítmico cumpliera con los siguientes principios rectores internacionales:
 
 \begin{itemize}
-    \item Legal (cumpliendo las leyes y regulaciones vigentes),
-    \item Ética (respetando los derechos fundamentales y valores humanos), y
-    \item Robusta (técnica y socialmente).
+    \item \textbf{Equidad y No Discriminación (Párrafo 29):} Exige que los actores de la IA reduzcan al mínimo y eviten reforzar resultados sesgados. El modelo de asignación de horarios se programó para evaluar métricas de forma puramente matemática, previniendo que el algoritmo priorizara injustamente a ciertas cohortes en detrimento de grupos vulnerables.
+    \item \textbf{Transparencia y Explicabilidad (Párrafos 37 y 40):} Establece que la explicabilidad es fundamental para garantizar el respeto a los derechos humanos, obligando a hacer inteligibles los resultados de los sistemas. Para satisfacer este mandato, el Sistema de Soporte a la Decisión (DSS) integró Inteligencia Artificial Explicable (XAI), permitiendo a la jefatura auditar visualmente los factores estadísticos de cada recomendación y eliminando el paradigma de la ``caja negra''.
+    \item \textbf{Protección en la Educación (Párrafo 104):} Dictamina que la IA en entornos de gestión educativa no debe hacer un uso indebido de la información del educando. Este principio blindó éticamente el uso de los datos históricos, asegurando que se emplearan exclusivamente para garantizar la fluidez curricular y el éxito académico.
 \end{itemize}
-
-Asegurar el apego a estas directrices es crucial para que el esquema de simulación y estudio de 
-tráfico que planteamos resulte claro, comprensible y fiable, inclusive cuando los datos empleados 
-sean artificiales o meramente una estimación.
