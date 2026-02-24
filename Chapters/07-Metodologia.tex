@@ -5,74 +5,29 @@
 \parindent0pt
 
 \section{Tipo de investigación}
-Esta investigación se clasifica como \textbf{aplicada}, ya que su objetivo central es desarrollar soluciones prácticas y efectivas para un problema real: la congestión del tráfico 
-urbano en la ciudad de Comayagua. Es aplicada porque trasciende el plano conceptual y se orienta directamente al diseño, construcción e implementación de un modelo 
-tecnológico basado en teoría de grafos y simulación computacional, cuyo propósito es analizar y mejorar el flujo vehicular en un entorno urbano específico.
+La investigación se clasificó bajo un enfoque cuantitativo con un alcance correlacional y predictivo. Hernández-Sampieri, Fernández Collado y Baptista Lucio\cite{sampieri_metodologia_2014} establecieron que los estudios correlacionales tienen como propósito principal conocer la relación o grado de asociación que exista entre dos o más conceptos, categorías o variables en un contexto en particular. Se determinó que el proyecto buscó establecer la relación matemática entre el comportamiento histórico de matrícula, las variables demográficas, los resultados del censo estudiantil y la demanda real de cupos para la carrera de Ingeniería en Sistemas. Al cuantificar estas interacciones mediante modelos de aprendizaje automático, el estudio trascendió la mera descripción del fenómeno de saturación, permitiendo pronosticar escenarios operativos futuros con un margen de error estadísticamente medible.
 
-El enfoque adoptado prioriza la intervención práctica, utilizando herramientas computacionales para representar la red vial como un grafo, evaluar su comportamiento estructural y 
-simular distintos escenarios de movilidad. La investigación inicia con un diagnóstico integral del estado del tráfico, identificando los puntos críticos de congestión, los 
-patrones horarios y las características físicas de las intersecciones; esta base empírica permite sustentar la fase de modelado y simulación.
-
-Además, se emplean técnicas estadísticas y algoritmos avanzados para analizar las causas subyacentes de 
-los patrones de tráfico y sus variables determinantes. La aplicación de estos métodos tiene una finalidad 
-instrumental: facilitar tanto la simulación del comportamiento vehicular como la implementación directa 
-de estrategias inteligentes que reduzcan los embotellamientos.
-
-En síntesis, la investigación se considera aplicada porque articula teoría y práctica para generar herramientas tecnológicas orientadas a la solución de un problema urbano 
-concreto, contribuyendo a mejorar la eficiencia, la movilidad y la sostenibilidad del sistema de transporte en Comayagua.
+Asimismo, por su naturaleza final, el estudio se definió como una investigación aplicada orientada a la innovación tecnológica. Aunque la literatura metodológica tradicional \cite{sampieri_metodologia_2014} se enfoca en el desarrollo de conocimiento puro, la estructuración de esta investigación se dirigió a la resolución de un problema logístico práctico dentro de la institución. Se desarrolló un modelo algorítmico que culminó en un Sistema de Soporte a la Decisión (DSS) plenamente funcional, diseñado para dotar a las autoridades académicas de una herramienta basada en evidencia empírica para la mitigación eficiente de cuellos de botella en la oferta curricular.
 
 \section{Diseño Metodológico}
-La presente investigación se desarrolla bajo un \textbf{enfoque cuantitativo}, orientado a analizar el comportamiento del tráfico vehicular mediante datos medibles y técnicas 
-matemáticas aplicadas a la teoría de grafos. Este enfoque permite estudiar el tránsito desde una perspectiva objetiva, comparando condiciones, identificando patrones y 
-evaluando la estructura de la red vial con precisión y consistencia.
+El diseño metodológico seleccionado para la evaluación y entrenamiento de los algoritmos fue de carácter no experimental, de corte longitudinal y evolución de grupo (cohortes). Hernández-Sampieri et al. \cite{sampieri_metodologia_2014} definieron los diseños no experimentales como aquellos estudios que se realizan sin la manipulación deliberada de variables, en los cuales se observan los fenómenos tal como se dan en su contexto natural para posteriormente analizarlos. Se estableció que el modelo de inteligencia artificial fue alimentado, entrenado y validado utilizando registros históricos masivos extraídos de las bases de datos del sistema de gestión universitaria. En ningún momento se alteraron retroactivamente las calificaciones, los historiales o las pautas de inscripción de los estudiantes para forzar resultados en el algoritmo, garantizando un entorno de prueba ex post facto riguroso. 
 
-El uso del método cuantitativo resulta adecuado debido a que el problema de congestión en Comayagua puede describirse a partir de variables observables y cuantificables, 
-tales como el volumen vehicular, los tiempos de espera, la velocidad promedio, la capacidad de las intersecciones y la conectividad entre las vías. El análisis numérico de 
-estos datos es fundamental para comprender el funcionamiento real de la movilidad urbana y detectar los puntos donde se producen mayores cargas o interrupciones del flujo.
-
-Durante distintos periodos del día se registraron datos relacionados con el flujo vehicular, los tiempos de espera y la densidad de tráfico en puntos estratégicos de la ciudad. 
-Estas mediciones fueron realizadas con rigor para asegurar la coherencia y fiabilidad de los resultados. Aunque los valores obtenidos representan estimaciones, su análisis 
-permite aproximarse al comportamiento habitual del tránsito en condiciones normales.
+Adicionalmente, se aplicó la dimensión longitudinal debido a la necesidad de evaluar el fenómeno a lo largo del tiempo. Según Hernández-Sampieri et al. \cite{sampieri_metodologia_2014}, los diseños longitudinales recolectan datos en diferentes puntos del tiempo para realizar inferencias respecto al cambio, sus determinantes y consecuencias. La cadencia del plan de estudios y las tasas de aprobación en asignaturas críticas se analizaron a través de múltiples periodos académicos consecutivos. Este diseño permitió al motor de pronóstico (como el suavizado exponencial y el modelo Random Forest) capturar con precisión matemática la estacionalidad de la demanda —como el incremento de estudiantes de primer ingreso en el primer ciclo del año— y el efecto de retardo causado por las clases de alta reprobación.
 
 \section{Involucrados en la investigación}
-En toda investigación orientada al estudio del tráfico vehicular, resulta esencial identificar a los involucrados, es decir, los \textbf{actores} que influyen o son afectados por la 
-dinámica de movilidad urbana. Reconocerlos permite comprender de manera más precisa cómo se estructura y se comporta el sistema vial de Comayagua, y facilita la interpretación 
-de los datos recolectados durante el trabajo de campo.
+La viabilidad e implementación de la solución arquitectónica requirió la identificación y categorización de los actores clave dentro del ecosistema universitario, evaluando su nivel de interacción, aporte de datos y el impacto que la tecnología generaría sobre sus funciones cotidianas. Reconocerlos permitió comprender de manera más precisa cómo se estructura y se comporta la planificación académica, y facilitó la interpretación de los datos recolectados.
 
-La caracterización de estos actores también contribuye a contextualizar los resultados obtenidos mediante los modelos basados en teoría de grafos y las simulaciones realizadas, 
-ya que cada grupo aporta información, necesidades y perspectivas distintas sobre el funcionamiento real del tránsito. De esta forma, identificar a los involucrados se 
-convierte en un paso clave para analizar el sistema vial de manera integrada y coherente.
+La caracterización de estos actores también contribuyó a contextualizar los resultados obtenidos mediante los modelos predictivos y las simulaciones espaciotemporales realizadas, ya que cada grupo aportó información, necesidades y restricciones distintas sobre el funcionamiento real de la carrera. De esta forma, identificar a los involucrados se convirtió en un paso clave para analizar el ecosistema de toma de decisiones de manera integrada y coherente.
 
 \subsection{Principales involucrados}
-El grupo de relevancia está conformado por los \textbf{conductores}, quienes constituyen el eje central del 
-sistema de movilidad. Su comportamiento, decisiones y hábitos de conducción influyen directamente en la 
-fluidez del tráfico y en la aparición de congestiones. Durante el proceso de observación se identificó 
-que muchos de los retrasos y embotellamientos se originan por maniobras inadecuadas, paradas en lugares 
-no autorizados o una baja capacidad de anticipación ante los cambios del flujo vehicular. Comprender 
-estos patrones de comportamiento fue, ya que permite asociar las variaciones del flujo vehicular no solo 
-a la capacidad física de las vías, sino también a los factores humanos que inciden en la eficiencia del 
-tránsito.
+El primer grupo principal correspondió a la Jefatura de la Carrera y al equipo de coordinación académica. Se determinó que estos actores fungieron como los usuarios finales y directos del tablero de control analítico. Su involucramiento fue indispensable para la validación del sistema, ya que el algoritmo se diseñó para no ejecutar publicaciones autónomas en el portal de registro. En su lugar, el modelo emitió proyecciones y sugerencias de programación que la jefatura debió auditar, ajustar y aprobar, ejerciendo su criterio experto y aplicando las normativas institucionales sobre las predicciones de la máquina.
+
+El segundo grupo de máxima prioridad estuvo conformado por la población estudiantil matriculada en la carrera. Se estableció que los estudiantes interactuaron activamente con el ecosistema de recolección de datos a través del llenado del Censo Académico Inteligente. Paralelamente, constituyeron los beneficiarios principales del diseño, puesto que la reingeniería de la programación académica, la minimización de solapamientos horarios y la garantía algorítmica de cupos en asignaturas "filtro" permitieron reducir su tiempo de permanencia en la institución y mejorar su fluidez en el progreso de la malla curricular.
 
 \subsection{Otros involucrados}
-Aunque estos grupos no fueron incorporados como variables cuantitativas en el análisis, se mencionan 
-debido a su influencia significativa en el flujo vehicular. Los \textbf{usuarios} del transporte 
-público, tales como taxis y autobuses, desempeñan un rol dual: facilitan la movilidad de muchas personas, 
-pero sus paradas frecuentes en sitios no autorizados y la competencia por clientes en vías concurridas 
-aumentan la congestión. La falta de puntos establecidos para el ascenso y descenso de pasajeros, junto al 
-elevado número de vehículos en ciertas rutas, contribuye a deteriorar la fluidez del tráfico, 
-especialmente en horarios de mayor demanda.
+El personal docente adscrito al departamento figuró como un grupo involucrado secundario de alto impacto logístico. Se analizó que la asignación de la carga laboral de los catedráticos estuvo directamente vinculada a los resultados arrojados por el optimizador espacial y temporal. Las normativas de contratación, la disponibilidad de jornadas y las preferencias horarias del profesorado operaron como un vector de restricciones (duras y blandas) que el algoritmo metaheurístico debió resolver para generar la matriz final del horario sin colisiones.
 
-Por otro lado, los \textbf{peatones}, aunque no operan vehículos, inciden directamente en la dinámica del 
-tránsito. La ausencia de infraestructuras adecuadas, como puentes peatonales o semáforos exclusivos, y 
-los cruces fuera de las zonas permitidas o en momentos inadecuados, generan demoras y obstaculizan el 
-desplazamiento vehicular. 
-
-Finalmente, las \textbf{autoridades municipales} responsables de la gestión vial, si bien su intervención en el 
-estudio fue de carácter observacional, resultan clave en la regulación del tráfico mediante la 
-implementación de medidas como la reprogramación de semáforos, restricciones de giros y delimitación de 
-zonas para carga y descarga, las cuales pueden modificar sustancialmente las condiciones de movilidad 
-urbana. Por ello, los resultados obtenidos con las simulaciones basadas en inteligencia artificial se 
-diseñaron para apoyarlos en la toma de decisiones estratégicas.
+Finalmente, la Dirección de Ingreso, Permanencia y Promoción (o entidad homóloga encargada del registro universitario) actuó como el proveedor infraestructural clave. Su involucramiento se centró en la administración técnica del Sistema de Gestión de Información (IMS) base. De estos repositorios institucionales se extrajeron las sábanas de datos, expedientes académicos y estadísticas de aulas físicas necesarias para ejecutar las tuberías de Extracción, Transformación y Carga (ETL) que nutrieron de información veraz a los modelos de pronóstico.
 
 \section{Técnicas e Instrumentos de recolección de datos}
 La recolección de datos constituye una fase fundamental dentro de la metodología de esta investigación, 
