@@ -5,279 +5,123 @@
 \parindent0pt
 
 \section{Tipo de investigación}
-La investigación se clasificó bajo un enfoque cuantitativo con un alcance correlacional y predictivo. Hernández-Sampieri, Fernández Collado y Baptista Lucio\cite{sampieri_metodologia_2014} establecieron que los estudios correlacionales tienen como propósito principal conocer la relación o grado de asociación que exista entre dos o más conceptos, categorías o variables en un contexto en particular. Se determinó que el proyecto buscó establecer la relación matemática entre el comportamiento histórico de matrícula, las variables demográficas, los resultados del censo estudiantil y la demanda real de cupos para la carrera de Ingeniería en Sistemas. Al cuantificar estas interacciones mediante modelos de aprendizaje automático, el estudio trascendió la mera descripción del fenómeno de saturación, permitiendo pronosticar escenarios operativos futuros con un margen de error estadísticamente medible.
+La presente investigación se clasificó como \textbf{aplicada y tecnológica}, dado que su propósito central no consistió en la generación de postulados teóricos puros, sino en la resolución de una problemática logística y administrativa concreta dentro de la oferta académica universitaria. Según Hernández-Sampieri et al. \cite{sampieri_metodologia_2014}, la investigación aplicada busca conocer para actuar, construyendo y modificando una realidad observable. 
 
-Asimismo, por su naturaleza final, el estudio se definió como una investigación aplicada orientada a la innovación tecnológica. Aunque la literatura metodológica tradicional \cite{sampieri_metodologia_2014} se enfoca en el desarrollo de conocimiento puro, la estructuración de esta investigación se dirigió a la resolución de un problema logístico práctico dentro de la institución. Se desarrolló un modelo algorítmico que culminó en un Sistema de Soporte a la Decisión (DSS) plenamente funcional, diseñado para dotar a las autoridades académicas de una herramienta basada en evidencia empírica para la mitigación eficiente de cuellos de botella en la oferta curricular.
+Bajo esta premisa, el estudio presentó un alcance \textbf{descriptivo, correlacional y predictivo}, estructurado operativamente en dos horizontes de tiempo para garantizar la aplicabilidad inmediata de la solución tecnológica:
+
+\begin{itemize}
+    \item \textbf{Horizonte 1: Optimización Logística a Corto Plazo (Alcance Descriptivo y Correlacional):} La prioridad fundamental del sistema radicó en la resolución del escenario actual. A través de metaheurísticas (Algoritmos Genéticos), se procesó la información del censo académico inmediato, la disponibilidad del padrón docente, las afinidades temáticas y las restricciones de infraestructura física (proporción de aulas generales versus laboratorios). Este enfoque permitió correlacionar las múltiples variables logísticas para generar y proponer la oferta académica más eficiente y libre de colisiones para el periodo lectivo inminente.
+    \item \textbf{Horizonte 2: Pronóstico Estratégico a Mediano Plazo (Alcance Predictivo):} Como componente de valor agregado para la toma de decisiones gerenciales, se implementaron modelos de aprendizaje automático (\textit{Machine Learning}). Al entrenar el algoritmo con el historial de matrícula y las tasas de aprobación/reprobación, el sistema adquirió la capacidad de predecir la demanda estudiantil para periodos subsiguientes. Esta proyección actúa como un mecanismo de alerta temprana, permitiendo a la jefatura anticipar la necesidad de contrataciones de docentes emergentes o la reasignación de espacios antes de que se materialice la saturación.
+\end{itemize}
+
+De esta manera, la investigación trascendió la mera automatización de horarios, culminando en el desarrollo de un Sistema de Soporte a la Decisión (DSS) integral. Este ecosistema dotó a las autoridades de una herramienta matemática para maximizar el uso de los recursos presentes (Horizonte 1) y planificar presupuestariamente los recursos futuros (Horizonte 2).
 
 \section{Diseño Metodológico}
-El diseño metodológico seleccionado para la evaluación y entrenamiento de los algoritmos fue de carácter no experimental, de corte longitudinal y evolución de grupo (cohortes). Hernández-Sampieri et al. \cite{sampieri_metodologia_2014} definieron los diseños no experimentales como aquellos estudios que se realizan sin la manipulación deliberada de variables, en los cuales se observan los fenómenos tal como se dan en su contexto natural para posteriormente analizarlos. Se estableció que el modelo de inteligencia artificial fue alimentado, entrenado y validado utilizando registros históricos masivos extraídos de las bases de datos del sistema de gestión universitaria. En ningún momento se alteraron retroactivamente las calificaciones, los historiales o las pautas de inscripción de los estudiantes para forzar resultados en el algoritmo, garantizando un entorno de prueba ex post facto riguroso. 
+El diseño metodológico seleccionado para la evaluación y entrenamiento de los algoritmos fue de carácter no experimental, de corte longitudinal y evolución de grupo (cohortes). Hernández-Sampieri et al. \cite{sampieri_metodologia_2014} definieron los diseños no experimentales como aquellos estudios que se realizan sin la manipulación deliberada de variables, en los cuales se observan los fenómenos tal como se dan en su contexto natural para posteriormente analizarlos. En ningún momento se alteraron retroactivamente las calificaciones, los historiales o las pautas de inscripción de los estudiantes para forzar resultados en el algoritmo, garantizando un entorno de prueba \textit{ex post facto} riguroso.
 
-Adicionalmente, se aplicó la dimensión longitudinal debido a la necesidad de evaluar el fenómeno a lo largo del tiempo. Según Hernández-Sampieri et al. \cite{sampieri_metodologia_2014}, los diseños longitudinales recolectan datos en diferentes puntos del tiempo para realizar inferencias respecto al cambio, sus determinantes y consecuencias. La cadencia del plan de estudios y las tasas de aprobación en asignaturas críticas se analizaron a través de múltiples periodos académicos consecutivos. Este diseño permitió al motor de pronóstico (como el suavizado exponencial y el modelo Random Forest) capturar con precisión matemática la estacionalidad de la demanda —como el incremento de estudiantes de primer ingreso en el primer ciclo del año— y el efecto de retardo causado por las clases de alta reprobación.
+Adicionalmente, se aplicó la dimensión longitudinal debido a la necesidad de evaluar el fenómeno a lo largo del tiempo. Según Hernández-Sampieri et al. \cite{sampieri_metodologia_2014}, los diseños longitudinales recolectan datos en diferentes puntos del tiempo para realizar inferencias respecto al cambio, sus determinantes y consecuencias. La cadencia del plan de estudios y las tasas de aprobación en asignaturas críticas se analizaron a través de múltiples periodos académicos consecutivos. Este diseño permitió al motor de pronóstico capturar con precisión matemática la estacionalidad de la demanda y el efecto de retardo causado por las clases de alta reprobación.
 
-\section{Involucrados en la investigación}
-La viabilidad e implementación de la solución arquitectónica requirió la identificación y categorización de los actores clave dentro del ecosistema universitario, evaluando su nivel de interacción, aporte de datos y el impacto que la tecnología generaría sobre sus funciones cotidianas. Reconocerlos permitió comprender de manera más precisa cómo se estructura y se comporta la planificación académica, y facilitó la interpretación de los datos recolectados.
+Para adaptar este rigor cuantitativo al ciclo de desarrollo de software, el diseño metodológico integró una fase inicial de elicitación de requisitos mediante recolección de campo. Se aplicaron entrevistas estructuradas a docentes y observación fotográfica de la infraestructura para parametrizar matemáticamente las restricciones del algoritmo optimizador. Paralelamente, debido a políticas institucionales de privacidad, se empleó un muestreo y recolección documental directa, solicitando voluntariamente los historiales a los estudiantes para conformar el \textit{dataset} de entrenamiento de la inteligencia artificial.
 
-La caracterización de estos actores también contribuyó a contextualizar los resultados obtenidos mediante los modelos predictivos y las simulaciones espaciotemporales realizadas, ya que cada grupo aportó información, necesidades y restricciones distintas sobre el funcionamiento real de la carrera. De esta forma, identificar a los involucrados se convirtió en un paso clave para analizar el ecosistema de toma de decisiones de manera integrada y coherente.
+\section{Población y Muestra}
+La viabilidad e implementación de la solución arquitectónica requirió la identificación y categorización de los actores clave dentro del ecosistema universitario, evaluando su nivel de interacción y aporte de datos. Reconocerlos permitió definir las unidades de análisis necesarias para alimentar los modelos predictivos y parametrizar las simulaciones espaciotemporales de la carrera.
 
-\subsection{Principales involucrados}
-El primer grupo principal correspondió a la Jefatura de la Carrera y al equipo de coordinación académica. Se determinó que estos actores fungieron como los usuarios finales y directos del tablero de control analítico. Su involucramiento fue indispensable para la validación del sistema, ya que el algoritmo se diseñó para no ejecutar publicaciones autónomas en el portal de registro. En su lugar, el modelo emitió proyecciones y sugerencias de programación que la jefatura debió auditar, ajustar y aprobar, ejerciendo su criterio experto y aplicando las normativas institucionales sobre las predicciones de la máquina.
+\subsection{Población y Muestra de Restricciones Lógicas (Docentes e Infraestructura)}
+El primer estrato poblacional correspondió al personal docente adscrito al departamento y a la Jefatura de la Carrera, cruzado con la disponibilidad de infraestructura física. A través de entrevistas de campo, se delimitó la muestra a los 4 ingenieros de base activos, estableciendo sus vectores de restricciones lógicas (jornadas de disponibilidad, preferencias de horario y áreas de especialidad técnica como Programación, Bases de Datos o Redes).
 
-El segundo grupo de máxima prioridad estuvo conformado por la población estudiantil matriculada en la carrera. Se estableció que los estudiantes interactuaron activamente con el ecosistema de recolección de datos a través del llenado del Censo Académico Inteligente. Paralelamente, constituyeron los beneficiarios principales del diseño, puesto que la reingeniería de la programación académica, la minimización de solapamientos horarios y la garantía algorítmica de cupos en asignaturas "filtro" permitieron reducir su tiempo de permanencia en la institución y mejorar su fluidez en el progreso de la malla curricular.
+Paralelamente, se muestreó el entorno físico, limitando el espacio de búsqueda del algoritmo a los 8 espacios disponibles asignados a la institución (3 aulas en la tercera planta, 4 en la cuarta planta y 1 espacio en la 111, abarcando aulas generales y laboratorios). Esta delimitación estricta de la población docente y espacial permitió que el algoritmo metaheurístico resolviera la asignación de carga laboral previniendo el sobrecupo y los choques logísticos en un entorno real de recursos limitados.
 
-\subsection{Otros involucrados}
-El personal docente adscrito al departamento figuró como un grupo involucrado secundario de alto impacto logístico. Se analizó que la asignación de la carga laboral de los catedráticos estuvo directamente vinculada a los resultados arrojados por el optimizador espacial y temporal. Las normativas de contratación, la disponibilidad de jornadas y las preferencias horarias del profesorado operaron como un vector de restricciones (duras y blandas) que el algoritmo metaheurístico debió resolver para generar la matriz final del horario sin colisiones.
+\\subsection{Población y Muestra de Modelado Predictivo (Estudiantes)}
+El segundo estrato poblacional, vital para el entrenamiento algorítmico, estuvo conformado por la totalidad de la población estudiantil matriculada en la carrera, la cual ascendió a un total de $N = 222$ individuos durante el periodo de estudio. Debido a las políticas de privacidad y a la imposibilidad de extraer la base de datos centralizada de la institución, se descartó el muestreo censal en favor de un diseño probabilístico estratificado.
 
-Finalmente, la Dirección de Ingreso, Permanencia y Promoción (o entidad homóloga encargada del registro universitario) actuó como el proveedor infraestructural clave. Su involucramiento se centró en la administración técnica del Sistema de Gestión de Información (IMS) base. De estos repositorios institucionales se extrajeron las sábanas de datos, expedientes académicos y estadísticas de aulas físicas necesarias para ejecutar las tuberías de Extracción, Transformación y Carga (ETL) que nutrieron de información veraz a los modelos de pronóstico.
+Para garantizar la representatividad estadística del modelo de aprendizaje automático (\textit{Machine Learning}), se calculó el tamaño de la muestra utilizando la ecuación para poblaciones finitas. Aplicando un nivel de confianza del $95\%$ y un margen de error cercano al $10\%$, el tamaño muestral óptimo exigía al menos 67 individuos; sin embargo, se logró recolectar una muestra ampliada de $n = 70$ estudiantes, mejorando así la robustez estadística del estudio.
 
-\section{Técnicas e Instrumentos de recolección de datos}
-La recolección de datos constituye una fase fundamental dentro de la metodología de esta investigación, 
-ya que permite obtener la información base para el análisis, modelado y simulación del tráfico vehicular 
-en la ciudad de Comayagua. Los datos empleados han sido obtenidos a partir de 
-{\textbf{observaciones directas}} y estimaciones basadas en la experiencia personal del investigador, complementadas 
-con fuentes secundarias de carácter técnico y municipal. Este enfoque, si bien limita la precisión 
-absoluta de los datos, proporciona una aproximación razonable a las condiciones reales del entorno vial, 
-suficiente para efectos de simulación y análisis en entornos virtuales como \acrshort{sumo}.
+Esta muestra de 70 individuos proveyó voluntariamente sus historiales académicos y su intención de matrícula. A nivel computacional, el proceso de Extracción, Transformación y Carga (ETL) desglosó estos historiales en múltiples registros individuales por asignatura, generando un \textit{dataset} tabular lo suficientemente denso para evitar el subajuste (\textit{underfitting}) en el modelo predictivo XGBoost. Asimismo, esta muestra representativa permitió al algoritmo de optimización simular la presión de la demanda real para la distribución de los 4 docentes en los 8 espacios físicos disponibles.
 
-La técnica principal utilizada fue la observación sistemática no participante, la cual consistió en 
-registrar manualmente los comportamientos del tráfico durante diferentes franjas horarias (pico matutino, 
-mediodía y vespertino), en puntos estratégicos de la ciudad donde se concentra la mayor afluencia 
-vehicular. Estos puntos incluyeron las principales arterias viales de Comayagua, como el bulevar Roberto
-Romero Larios, la carretera CA-5. En cada sitio se observó la densidad del tráfico, los tipos de 
-vehículos predominantes, las velocidades promedio y los tiempos aproximados de espera en intersecciones.
-Además de la observación, se aplicó una técnica de estimación de flujos vehiculares basada en el conteo 
-visual y la proyección por intervalos de tiempo. Esta técnica consistió en medir la cantidad promedio de 
-vehículos que transitan por una vía durante lapsos de 10 a 15 minutos, para luego extrapolar los valores 
-a una hora completa.
+\section{Técnicas e instrumentos de recolección de datos}
+Para garantizar la validez y confiabilidad de la información que alimentó la arquitectura tecnológica, se diseñaron y aplicaron instrumentos específicos para cada fase operativa del sistema. Hernández-Sampieri et al. \cite{sampieri_metodologia_2014} señalan que recolectar los datos implica seleccionar o desarrollar un instrumento de medición válido y confiable, aplicarlo y preparar las mediciones obtenidas para su análisis estadístico. En el contexto de este modelo algorítmico, la recolección se dividió en instrumentos para la parametrización de restricciones y herramientas para la estructuración del \textit{dataset} predictivo.
 
-En cuanto a los instrumentos utilizados, se emplearon herramientas digitales que facilitaron la 
-recopilación y organización de la información. Entre ellas destacan Google Maps, OpenStreetMap y Waze, 
-utilizadas para identificar y delimitar las áreas de estudio, obtener coordenadas geográficas precisas y 
-trazar rutas de desplazamiento.
-También se recurrió al software \acrshort{sumo} como instrumento de análisis indirecto, ya que su módulo de 
-generación de tráfico (\textbf{RandomTrips.py}) permitió contrastar los valores observacionales con escenarios 
-simulados. De esta forma, los datos recolectados manualmente se tradujeron en parámetros digitales 
-(rutas, velocidades, tasas de inserción vehicular), integrándose dentro de un modelo virtual del tráfico 
-de Comayagua. Esta fase de digitalización de datos fue fundamental para vincular la observación empírica 
-con el análisis cuantitativo, garantizando así la coherencia metodológica del estudio.
-
-Finalmente, el uso de técnicas mixtas de registro observación directa, conteo visual y modelado en 
-software proporcionó una base sólida para el análisis comparativo entre el flujo vehicular observado y 
-los resultados generados por la simulación. Si bien las limitaciones inherentes a la falta de 
-instrumentación electrónica reducen la exactitud en términos absolutos, el objetivo central del estudio 
-no radica en la medición exacta, sino en la evaluación de la aplicabilidad de la inteligencia artificial 
-como herramienta de optimización del tráfico vehicular. Por tanto, las técnicas de recolección empleadas 
-son adecuadas para demostrar la viabilidad práctica del modelo propuesto en contextos urbanos con 
-recursos tecnológicos limitados, como el caso de Comayagua.
-
-\section{Procedimiento}
-El procedimiento de esta investigación se estructuró mediante una secuencia metodológica compuesta por diversas fases interrelacionadas, diseñadas para garantizar un proceso 
-sistemático, replicable y alineado con los objetivos propuestos. Cada fase aborda un componente específico del estudio, desde la observación empírica del entorno vial hasta 
-la validación final del modelo de simulación. El enfoque empleado es de carácter aplicado, puesto que busca generar información útil para la gestión del tráfico urbano en 
-Comayagua mediante herramientas cuantitativas, técnicas de modelado y métodos basados en la teoría de grafos, permitiendo obtener conclusiones medibles y transferibles a 
-contextos urbanos similares. \\
-
-\textbf{Fase 1: Observación y diagnóstico del entorno vial} \\
-La primera fase consistió en un reconocimiento empírico del sistema vial de Comayagua, mediante visitas de campo y observaciones directas en distintos puntos de la ciudad. Se 
-identificaron las principales vías de circulación, intersecciones críticas y zonas donde se produce la mayor congestión vehicular. Durante esta etapa, se levantaron datos 
-aproximados sobre la cantidad de vehículos que transitan en horas pico. Este diagnóstico inicial permitió establecer una línea base del flujo vehicular, necesaria para la 
-posterior simulación del entorno urbano. \\
-
-\textbf{Fase 2: Manejo y Ordenamiento de la Información Recopilada} \\
-Tras la adquisición de los datos, estos fueron organizados y depurados meticulosamente en hojas de cálculo, categorizándolos por clase, instante de registro y coordenadas 
-geográficas. A continuación, la información fue migrada a un formato que se integrara sin problemas con las plataformas de simulación en uso. Dicha organización hizo posible 
-el establecimiento de variables como la congestión vehicular, la extensión de las rutas y la cadencia de tránsito. Si bien los datos se obtuvieron mediante la mera observación 
-y ciertos cálculos, el tratamiento cuantitativo aseguró que los valores integrados en la simulación reflejaran de manera fiel y lógica la dinámica verdadera del tráfico. Esta 
-etapa se centró en alistar los datos numéricos para nutrir el modelo informático.\\
-
-\textbf{Fase 3: Análisis de la red vial aplicando la teoría de grafos} \\
-En esta fase se procedió a representar la red vial de Comayagua mediante un grafo dirigido y ponderado, donde los nodos corresponden a intersecciones y las aristas a segmentos 
-viales. A partir de esta estructura, se aplicaron métricas fundamentales de la teoría de grafos, tales como:
+\subsection{Instrumentos de parametrización del sistema}
+Estos instrumentos se orientaron a capturar las variables del entorno físico y operativo, transformando las reglas empíricas de la administración académica en parámetros matemáticos medibles para el algoritmo metaheurístico:
 
 \begin{itemize}
-    \item \textbf{Grado de entrada y salida}, para identificar intersecciones con mayor carga estructural.
-    \item \textbf{Caminos mínimos}, útiles para determinar trayectos más eficientes.
-    \item \textbf{Centralidades} (betweenness, closeness, degree), que permitieron reconocer nodos críticos y posibles cuellos de botella.
-    \item \textbf{Componentes conexas y subgrafos relevantes}, para comprender la coherencia interna del sistema vial.
+    \item \textbf{Guion de entrevista estructurada:} Se diseñó un cuestionario estandarizado dirigido a la Jefatura del Departamento y a los docentes de la carrera. El instrumento constó de reactivos orientados a cuantificar la disponibilidad de jornadas, límites de carga laboral y preferencias de asignación. La información obtenida no se sometió a análisis cualitativo discursivo, sino que se tradujo directamente en el vector de penalizaciones (restricciones blandas y duras) del optimizador logístico.
+    \item \textbf{Bitácora de observación estructurada y levantamiento fotográfico:} Se elaboró una matriz de registro de infraestructura apoyada con evidencia fotográfica de las aulas y laboratorios. El instrumento midió variables espaciales exactas, tales como el aforo máximo real y la disponibilidad de equipo técnico. Estos datos numéricos se ingresaron a la base de datos para restringir matemáticamente la asignación de cupos por sección, previniendo el sobrecupo y garantizando la viabilidad física del horario.
 \end{itemize}
 
-Este análisis permitió detectar vulnerabilidades, patrones topológicos y zonas de alto impacto en la dinámica de tráfico urbano. \\
+\subsection{Instrumentos de recolección cuantitativa}
+Para el entrenamiento de los modelos de aprendizaje automático (\textit{Machine Learning}), se requirió estructurar el comportamiento histórico y la intención futura del estudiantado. Se utilizaron los siguientes instrumentos:
 
-\textbf{Fase 4: Modelado del entorno urbano} \\
-En esta etapa se desarrolló un modelo digital del entorno vial utilizando el software \acrshort{sumo} Los mapas fueron importados desde \textbf{OpenStreetMap} y posteriormente ajustados para 
-reflejar fielmente la realidad de Comayagua, incorporando sentidos de circulación, restricciones de giro, límites de velocidad, semáforos y jerarquías de vías. La estructura 
-construida en \acrshort{sumo} se alineó con el grafo previamente generado, permitiendo que cada elemento del modelo matemático tuviera su equivalente en la simulación. El propósito 
-principal del modelado fue disponer de una representación dinámica del sistema vial para probar escenarios y contrastar el comportamiento de la red bajo diferentes condiciones. \\
+\begin{itemize}
+    \item \textbf{Formulario Digital (Censo Académico Inteligente):} Se desarrolló y desplegó un instrumento digital estructurado para capturar la intención de matrícula de la población estudiantil. Este formulario cuantificó variables independientes clave, como las asignaturas proyectadas a cursar en el periodo consecutivo y la preferencia de jornada, operando como un indicador directo de la demanda a corto plazo.
+    \item \textbf{Matriz de extracción documental de calificaciones:} Para consolidar la base de datos de entrenamiento algorítmico, se diseñó una plantilla estandarizada de extracción. A través de esta matriz, se tabularon los historiales académicos provistos voluntariamente por la muestra estudiantil. El instrumento permitió organizar variables predictivas cruciales (índice académico global, tasa de aprobación, historial de prerrequisitos), estructurando la información cruda en un formato apto para las tuberías de Extracción, Transformación y Carga (ETL).
+\end{itemize}
 
+\section{Procedimiento y fases de la investigación}
+El desarrollo del Sistema de Soporte a la Decisión (DSS) se ejecutó siguiendo un ciclo de vida iterativo, adaptando principios de la ingeniería de software y la ciencia de datos a las exigencias metodológicas del entorno académico. El procedimiento se estructuró en cinco fases operativas secuenciales:
 
-\textbf{Fase 5: Implementación de la simulación y análisis de escenarios} \\
-Una vez completado el modelo urbano digital, se ejecutaron diversas simulaciones modificando condiciones como volumen vehicular, rutas predominantes y distribución del flujo. 
-Estas variaciones permitieron observar indicadores como demoras, velocidad promedio y saturación de intersecciones. El análisis comparativo entre escenarios permitió examinar 
-cómo la estructura del grafo influía en el rendimiento del sistema vial, y detectar puntos donde la topología de la red genera cuellos de botella o sobrecarga de flujo. En esta 
-fase, la simulación se utilizó para validar las conclusiones derivadas del análisis de grafos y para estudiar el comportamiento emergente del tráfico en condiciones controladas. \\
+\subsection{Fase 1: Levantamiento de requerimientos y recolección de campo}
+La primera etapa consistió en la adquisición de la materia prima algorítmica y la definición de las reglas de negocio. Se ejecutó el trabajo de campo en las instalaciones de la Universidad Nacional Autónoma de Honduras (UNAH). Durante esta fase, se aplicaron las entrevistas estructuradas a la jefatura y al cuerpo docente para elicitar las restricciones lógicas (disponibilidad de horarios y preferencias). Simultáneamente, se realizó el levantamiento fotográfico y la medición física de la capacidad instalada de las aulas. Finalmente, se procedió a la recolección documental mediante la solicitud directa de historiales académicos a la muestra estudiantil y el despliegue del Censo Académico Inteligente.
 
-\textbf{Fase 6: Evaluación y validación de resultados} \\
-Finalmente, se llevó a cabo un proceso de validación mediante la comparación de los resultados obtenidos en la simulación con los patrones observados durante la fase de 
-diagnóstico inicial. Se analizaron indicadores clave como reducción proyectada de congestión, duración de los desplazamientos y eficiencia del flujo vehicular. Esta evaluación 
-buscó determinar la consistencia del modelo, su capacidad para representar adecuadamente el comportamiento real del tráfico y su utilidad para apoyar la toma de decisiones en 
-la planificación vial. Los resultados confirmaron la pertinencia de utilizar teoría de grafos y simulación para identificar vulnerabilidades estructurales y proponer mejoras 
-sostenibles en la movilidad urbana.
+\subsection{Fase 2: Preprocesamiento de datos y anonimización (ETL)}
+Con la información cruda recolectada, se construyó una tubería de Extracción, Transformación y Carga (ETL). Los registros documentales se digitalizaron y sometieron a procesos de limpieza algorítmica para eliminar valores nulos o atípicos. Para garantizar el cumplimiento irrestricto de la Ley de Transparencia y Acceso a la Información Pública y salvaguardar el derecho de \textit{Habeas Data}, se aplicaron técnicas de enmascaramiento de datos (\textit{Data Masking}). Las identidades y números de cuenta de los estudiantes fueron encriptados mediante funciones \textit{hash} criptográficas, generando un \textit{dataset} puramente numérico y anonimizado, apto para el consumo de la inteligencia artificial sin comprometer la privacidad individual.
+
+\subsection{Fase 3: Modelado y entrenamiento predictivo}
+Una vez consolidado el \textit{Data Warehouse}, se procedió a la fase de experimentación con algoritmos de \textit{Machine Learning}. Se configuraron y entrenaron modelos basados en árboles de decisión (como \textit{Random Forest} y métodos de ensamblaje por \textit{Gradient Boosting}) para proyectar la demanda académica. El algoritmo analizó las relaciones no lineales entre las tasas de aprobación históricas, los índices de reprobación en asignaturas ``filtro'' y las intenciones manifestadas en el censo. El resultado de esta fase fue un motor predictivo capaz de calcular matemáticamente la cantidad exacta de cupos y secciones requeridas para el periodo lectivo consecutivo.
+
+\subsection{Fase 4: Optimización logística mediante Programación con Restricciones}
+Con la predicción de la demanda resuelta, la cuarta fase abordó el Problema de Horarios Universitarios (UCTP). Se diseñó y codificó un algoritmo de optimización matemática exacta basado en Programación con Restricciones (\textit{Constraint Programming}) encargado de la asignación espacial y temporal. La función objetivo del algoritmo fue programada para asimilar los datos de la Fase 1: aplicó bloqueos absolutos (\textit{Hard Constraints}) para evitar severamente las colisiones de aulas o el exceso de aforo, y premió matemáticamente (\textit{Soft Constraints}) la asignación de horarios en las jornadas preferidas por los docentes y la priorización de clases para estudiantes por egresar. El modelo procesó millones de variables booleanas a través de técnicas de ramificación y poda (\textit{Branch and Bound}), convergiendo en una matriz de horarios óptima y libre de conflictos logísticos.
+
+\subsection{Fase 5: Integración del entorno visual interactivo}
+La fase final consistió en encapsular la complejidad de los modelos predictivos y heurísticos dentro de una interfaz gráfica accesible para la administración. Se desarrolló un entorno web interactivo (Dashboard) que operó como el \textit{frontend} del Sistema de Soporte a la Decisión. Para cumplir con los lineamientos de la UNESCO sobre la explicabilidad de la Inteligencia Artificial (XAI), el sistema no se limitó a mostrar el horario final, sino que integró visualizaciones gráficas que desglosaron los factores matemáticos que motivaron cada sugerencia, permitiendo a la jefatura auditar, modificar y aprobar la planificación con total transparencia algorítmica.
 
 \section{Herramientas tecnológicas utilizadas}
-Para llevar a cabo este estudio, fue necesario combinar diferentes instrumentos tecnológicos que 
-facilitaron el manejo y estudio eficaz de la información sobre el tránsito de vehículos. Por su carácter 
-cuantitativo y aplicable, las herramientas seleccionadas hicieron hincapié en la simulación del tráfico 
-urbano, así como en el análisis de datos mediante \acrshort{ia}. En este apartado, se 
-detallan los recursos tecnológicos más importantes que se usaron, clasificados en tres apartados: 
-programas informáticos de simulación, lenguajes y espacios de programación, y plataformas de soporte 
-computacional.\\
+El desarrollo, entrenamiento y despliegue del Sistema de Soporte a la Decisión (DSS) requirió la conformación de un entorno de trabajo (\textit{stack} tecnológico) robusto, priorizando la eficiencia computacional, la escalabilidad y el uso de tecnologías de código abierto.
 
-\textbf{Software de Simulación}\\
-Se empleó \acrfull{sumo} para la modelación y el análisis del comportamiento del 
-tráfico vehicular. A través de la configuración de rutas, cruces, semáforos y parámetros de conducción, 
-este software hace posible reproducir con exactitud el flujo de vehículos en áreas urbanas. Se escoge 
-\acrshort{sumo} porque es flexible, puede ser utilizado con varios formatos de datos y tiene la capacidad 
-de incorporar scripts externos en Python, lo que permite comunicarse con algoritmos de \acrshort{ia}.
-La creación de un mapa digital que represente la red vial de la ciudad analizada, en este caso Comayagua, 
-con datos adquiridos de OpenStreetMap (OSM), es el fundamento del proceso de simulación en \acrshort{sumo}. 
-Después, se crearon flujos de tráfico con cifras estimadas a partir de observaciones efectivas, 
-modificando el número de vehículos, los tiempos de trayecto y los patrones de congestión. Gracias a este 
-ambiente, fue posible simular situaciones de tráfico realistas, que son esenciales para ensayar y cotejar 
-estrategias de optimización.\\
-
-\textbf{Lenguajes y entornos de programación}\\
-Se utilizó \texttt{Python} para analizar y procesar los datos, ya que este lenguaje tiene la capacidad de 
-gestionar información y una extensa disponibilidad de bibliotecas de inteligencia artificial y 
-científicas. Algunas de las librerías más utilizadas son:
-
+\subsection{Lenguajes de programación y bases de datos}
 \begin{itemize}
-    \item \textbf{NumPy} proporcionó arreglos multidimensionales y operaciones matemáticas optimizadas, indispensables para manejar matrices, distancias, tiempos de viaje y 
-    pesos asociados a las aristas del grafo vial.
-
-    \item Por su parte, \textbf{Pandas} ofrece herramientas sofisticadas para la organización, limpieza y transformación de datos 
-    tabulares, permitiendo un manejo ágil de series temporales y tablas de datos que resultan esenciales 
-    para preparar la información del tráfico para su análisis posterior.
-
-    \item \textbf{Matplotlib} se empleó como la herramienta principal de visualización del proyecto. Permitió generar gráficos estáticos, diagramas comparativos y 
-    representaciones detalladas de flujos, distribuciones y métricas asociadas a la red vial. Su flexibilidad permitió ilustrar tendencias, identificar concentraciones de 
-    tráfico y visualizar nodos críticos, facilitando la comprensión del comportamiento de la movilidad urbana.
-
-    \item Dado que el eje central del estudio es la teoría de grafos, \textbf{NetworkX} fue una biblioteca fundamental. Con ella fue posible:
-    
-    \begin{itemize}
-        \item Construir grafos dirigidos y ponderados a partir de los datos recopilados.
-        \item Calcular métricas como centralidades, grado, componentes conexas y caminos mínimos.
-        \item Detectar nodos vulnerables y analizar la estructura global del sistema vial.
-    \end{itemize}
-
-    NetworkX permitió traducir la información empírica en representaciones matemáticas ideales para el diagnóstico estructural del tráfico urbano.
-
-    \item Para extraer y procesar la red vial desde OpenStreetMap se utilizó \textbf{OSMnx}, herramienta que permitió convertir datos cartográficos reales en un grafo utilizable 
-    dentro del análisis computacional. A través de ella fue posible obtener automáticamente:
-
-    \begin{itemize}
-        \item Nodos (intersecciones)
-        \item Aristas (segmentos viales)
-        \item Sentidos de circulación
-        \item Atributos como longitud, velocidad permitida y tipo de vía
-    \end{itemize}
-
-    OSMnx facilitó la integración entre datos reales y el modelado por grafos de la red vial.
+    \item \textbf{Python (3.10+):} Se seleccionó como el lenguaje de programación principal para todo el \textit{backend} debido a su supremacía en el ecosistema de la ciencia de datos, su amplia compatibilidad con librerías matemáticas y su eficiencia en el manejo de estructuras de datos complejas.
+    \item \textbf{Sistemas de Gestión de Bases de Datos (RDBMS):} Se utilizó un motor relacional (MySQL/PostgreSQL) para construir el \textit{Data Warehouse}. Esta tecnología permitió alojar de manera estructurada los registros históricos anonimizados, facilitando consultas ágiles mediante lenguaje SQL durante la fase de extracción.
 \end{itemize}
 
-\textbf{Plataformas de desarrollo y análisis}\\
-Durante la fase de programación y simulación se utilizaron tres plataformas principales:
-
+\subsection{Frameworks y librerías algorítmicas}
 \begin{itemize}
-    \item \textbf{Visual Studio Code (VS Code):} entorno de desarrollo integrado (IDE) utilizado para 
-    escribir, depurar y ejecutar los scripts en Python. Su soporte para extensiones Python permitió un 
-    entorno de trabajo ordenado y eficiente.
-    \item \textbf{Google Colab:} plataforma en la nube utilizada para el entrenamiento de los modelos de 
-    inteligencia artificial y la ejecución de procesos computacionalmente intensivos. Al ofrecer recursos 
-    de GPU gratuitos, permitió mejorar los tiempos de procesamiento sin necesidad de contar con hardware 
-    avanzado.
-    \item \textbf{Microsoft Excel:} herramienta utilizada para organizar los datos generados durante las 
-    simulaciones, elaborar tablas comparativas, calcular indicadores clave (velocidad media, flujo, 
-    densidad) y crear representaciones gráficas preliminares para análisis.
+    \item \textbf{Librerías de Preprocesamiento (ETL):} Se emplearon \textbf{Pandas} y \textbf{NumPy} para la limpieza, transformación y manipulación matricial de los grandes volúmenes de datos extraídos de los historiales académicos.
+    \item \textbf{Modelado Predictivo (\textit{Machine Learning}):} Se utilizó la librería \textbf{Scikit-Learn} en conjunto con implementaciones de \textit{Gradient Boosting} (como \textbf{XGBoost} o \textbf{LightGBM}). Estas herramientas proporcionaron los algoritmos de ensamble necesarios para calcular la predicción de la demanda con alta precisión sobre datos tabulares.
+    \item \textbf{Optimización Matemática Exacta:} Para resolver el Problema de Horarios Universitarios (UCTP), se implementó el \textit{Solver} CP-SAT de \textbf{Google OR-Tools}. Este motor de investigación de operaciones impulsado por Google facilitó la programación declarativa de restricciones lógicas, permitiendo al sistema encontrar la solución óptima y demostrable para la asignación de docentes, aulas y horarios, superando en eficiencia y precisión a los enfoques metaheurísticos tradicionales.
 \end{itemize}
 
-\textbf{Hardware y Software}\\
-El proyecto se desarrolló en una computadora portátil Lenovo Ideapad S340 15IWL, equipada con procesador 
-Intel Core i5, 8 GB de memoria RAM y 500 GB de almacenamiento interno, con sistema operativo Windows 11. 
-Este equipo ofreció un equilibrio adecuado entre capacidad de procesamiento y portabilidad, permitiendo 
-ejecutar las simulaciones de tráfico, procesar datos y entrenar modelos de inteligencia artificial de 
-manera eficiente. La configuración del hardware fue suficiente para soportar los requerimientos 
-computacionales de SUMO y Python, siempre que los escenarios de simulación se mantuvieran dentro de un 
-tamaño y complejidad moderados.
-
-\section{Métodos de validación}
-La \textbf{validación} constituye una de las etapas más críticas dentro del proceso metodológico, pues garantiza que el modelo propuesto y las herramientas implementadas cumplan con 
-los objetivos establecidos de manera eficaz, precisa y reproducible. En el presente estudio, la validación se llevó a cabo mediante pruebas de rendimiento del modelo de 
-simulación, evaluación de métricas cuantitativas y análisis de casos de uso específicos que permitieron comprobar la aplicabilidad del sistema en distintos escenarios de 
-tráfico urbano en la ciudad de Comayagua.
-
-\subsection{Métricas de evaluación del modelo}
-Para asegurar que los hallazgos logrados mediante el análisis por teoría de grafos y la simulación en SUMO reflejan con precisión la conducta real del sistema vial de 
-Comayagua, la validación es una fase esencial.  Para evaluar la pertinencia, la confiabilidad y la consistencia del modelo desarrollado, este estudio utilizó una mezcla de 
-métodos comparativos y cuantitativos.  Estos procedimientos posibilitan comparar los patrones simulados con observaciones empíricas, comprobar la coherencia de las métricas 
-topológicas y examinar el rendimiento del sistema en diferentes contextos.  Los métodos más importantes que se usaron fueron:
-
-\subsubsection{Validación empírica de campo}
-Esta técnica se basa en cotejar los resultados que el modelo ha dado (duración de trayectos, puntos de congestión) con las observaciones directas que se han recopilado 
-durante la etapa de diagnóstico.
-
-Se implementó a través de:
+\subsection{Herramientas de visualización y explicabilidad (XAI)}
 \begin{itemize}
-    \item Comparación entre los tiempos de desplazamiento simulados y los que se han medido manualmente en horas de mayor afluencia. 
-    \item Comprobación de la coincidencia entre los nodos críticos que se encuentran en el grafo y las intersecciones observadas como problemáticas. 
-    \item Verificación de los patrones de congestión que se repiten y se han observado en el campo.
+    \item \textbf{Streamlit:} Se adoptó este \textit{framework} para el desarrollo ágil del \textit{frontend}. Permitió compilar el \textit{Dashboard} interactivo web utilizando exclusivamente secuencias de comandos en Python, garantizando una interfaz fluida para la jefatura.
+    \item \textbf{SHAP (\textit{SHapley Additive exPlanations}):} Se integró esta librería de teoría de juegos para dotar al sistema de Inteligencia Artificial Explicable. SHAP tradujo las decisiones matemáticas de los modelos predictivos en gráficos de impacto, eliminando el sesgo de ``caja negra''.
 \end{itemize}
-Este procedimiento hace posible establecer si la red modelada replica de manera apropiada la dinámica vehicular real.
 
-\subsubsection{Validación estructural del grafo}
-Se comprobó la estructura de la red vial para asegurarse de que el grafo creado cumpliera con las características esperadas de una red urbana real:
+\subsection{Hardware y entorno de ejecución}
+Para demostrar la viabilidad operativa y económica del sistema sin depender de costosos clústeres en la nube, el entrenamiento y la ejecución local de los modelos se realizaron en una estación de trabajo de gama media-alta. Se utilizó un procesador de arquitectura multinúcleo emparejado con 16 GB de memoria RAM, recursos que resultaron suficientes para compilar las metaheurísticas en tiempos computacionalmente aceptables.
+
+\section{Método de validación}
+Para comprobar la eficacia del sistema desarrollado y garantizar que la herramienta mitiga el problema de la saturación académica, se establecieron tres ejes de validación que evaluaron tanto la precisión algorítmica como la utilidad operativa. 
+
+\subsection{Pruebas de rendimiento predictivo}
+El motor de inteligencia artificial encargado de pronosticar la demanda de cupos fue sometido a técnicas de validación cruzada (\textit{K-Fold Cross-Validation}). Para cuantificar su precisión, se calcularon las siguientes métricas estadísticas de error:
 \begin{itemize}
-    \item Conexión apropiada (falta de elementos desconectados en las vías principales).
-    \item Correspondencia entre longitudes reales y pesos dados a los bordes.
-    \item Sucesión lógica entre sentidos de circulación, limitaciones y jerarquías de las vías.
-    \item Relación entre el grado de los nodos y la estructura vial que se puede observar (por ejemplo, en intersecciones primordiales o rotondas).
+    \item \textbf{Error Absoluto Medio (MAE) y Raíz del Error Cuadrático Medio (RMSE):} Se utilizaron para medir la desviación promedio entre los cupos predichos por la IA y la cantidad real de estudiantes que terminaron matriculando la asignatura en los datos de prueba.
+    \item \textbf{Coeficiente de Determinación ($R^2$):} Se empleó para evaluar la proporción de la varianza en la demanda que fue explicada correctamente por las variables independientes del modelo (como el índice académico y la tasa de reprobación previa).
 \end{itemize}
-Antes de llevar a cabo simulaciones, este tipo de validación garantiza que el grafo represente con exactitud la estructura urbana.
 
-\subsubsection{Validación del modelo de simulación}
-Para verificar si el modelo en SUMO reproduce de manera apropiada conductas creíbles del tráfico urbano, se analizó su rendimiento.
-
-La validación abarcó:
+\subsection{Evaluación del algoritmo optimizador}
+La validación del Algoritmo Genético no se midió por precisión predictiva, sino por la satisfacción de restricciones mediante el cálculo de la \textbf{Tasa de Penalización}. 
 \begin{itemize}
-    \item Evaluación de la estabilidad del flujo vehicular en las simulaciones.
-    \item Evaluación de la reacción del sistema a las fluctuaciones en la demanda.
-    \item Verificación de que los patrones emergentes (colas, cuellos de botella, demoras) son congruentes con las conductas anticipadas en situaciones urbanas reales.
+    \item \textbf{Verificación de Restricciones Duras:} Se aplicaron pruebas de estrés al cronograma generado para confirmar matemáticamente que la penalización por solapamiento (dos clases en la misma aula/hora o un docente asignado a dos secciones simultáneas) fuera exactamente igual a cero ($0\%$).
+    \item \textbf{Optimización de Restricciones Blandas:} Se evaluó la función de aptitud (\textit{fitness}) para comprobar que el algoritmo maximizara la asignación de profesores en sus jornadas preferidas, validando la eficiencia logística del horario.
 \end{itemize}
-Aquellos escenarios cuyos resultados simulados se mantuvieron dentro de parámetros lógicos, basados en la literatura y la observación, fueron considerados plausibles.
 
-\subsubsection{Validación comparativa con trabajos y modelos existentes}
-Se contrastaron los resultados obtenidos con estudios similares en ciudades latinoamericanas de tamaño y estructura comparable, con el fin de verificar:
+\subsection{Validación operativa y juicio de actores clave (Enfoque Tripartito)}
+Más allá de las métricas puramente computacionales, la fase final de validación trascendió hacia la evaluación de la utilidad real del sistema en el ecosistema universitario. Se adoptó un enfoque de validación tripartita, ejecutando casos de uso controlados para medir el nivel de satisfacción de los tres actores fundamentales:
+
 \begin{itemize}
-    \item Si los niveles de congestión pronosticados son lógicos.
-    \item Si los patrones que se han encontrado (saturación en las horas pico, cuellos de botella en vías arteriales) concuerdan con investigaciones anteriores
-    \item Si las métricas de centralidad y su interpretación concuerdan con lo que la literatura científica dice acerca de la movilidad urbana.
+    \item \textbf{Validación Estratégica (Jefatura de Departamento):} El sistema fue auditado por la autoridad encargada de armar y aprobar la matrícula. Se evaluó la usabilidad del \textit{Dashboard} web y la eficiencia del algoritmo para agrupar la oferta académica en los espacios físicos disponibles (3 aulas en la 3era planta, 4 en la 4ta y el espacio 111), mitigando los cuellos de botella sin requerir trabajo manual excesivo.
+    \item \textbf{Validación Logística (Cuerpo Docente / Ingenieros):} La matriz de horarios generada fue sometida a la revisión del padrón de 4 docentes activos. Este grupo validó el cumplimiento de las restricciones blandas y duras programadas en la metaheurística, verificando el respeto a sus ventanas de disponibilidad horaria y la asignación correcta según sus áreas de especialidad técnica.
+    \item \textbf{Validación de Demanda (Población Estudiantil):} Se contrastó la oferta académica generada por el sistema contra las necesidades expresadas en el Censo Académico Inteligente. La validación determinó el porcentaje de satisfacción de la demanda, comprobando que los estudiantes tuvieran acceso garantizado a las asignaturas de ruta crítica para evitar retrasos en su plan de estudios.
 \end{itemize}
-Esta validación facilita el análisis de si la conducta de la red vial en Comayagua se ajusta a patrones típicos en ciudades que están creciendo.
-
-\subsection{Casos de uso}
-Finalmente, se desarrollaron casos de uso concretos con el propósito de validar el modelo en diferentes condiciones operativas. Estos escenarios permitieron analizar la 
-respuesta del sistema ante variaciones en el flujo vehicular, cambios en la infraestructura y modificaciones en el comportamiento del tránsito. Los casos más relevantes 
-fueron los siguientes:\\
-
-\textbf{Caso 1 \- Condición base (hora valle):} \\
-Se simuló la operación del tráfico bajo condiciones normales, con un volumen promedio de 300 vehículos por hora. Este escenario fue utilizado para calibrar los parámetros 
-iniciales del modelo y establecer una línea de referencia que sirviera como punto de comparación para los demás casos.\\
-
-\textbf{Caso 2 \- Condición de congestión (hora pico):} \\
-Se incrementó la demanda vehicular en un 30 \% con respecto al caso base, con el objetivo de analizar el efecto sobre la velocidad promedio y los tiempos de recorrido. Este 
-escenario permitió verificar la capacidad del modelo para representar situaciones de saturación y la formación de cuellos de botella dentro de la red vial. \\
-
-\textbf{Caso 3 \- Escenario de contingencia:} \\
-Se simuló la sustitución de un semáforo por una rotonda, lo que implicó modificar la estructura del grafo mediante la eliminación de la arista asociada al cruce semaforizado y 
-la incorporación de nuevas conexiones que representan el flujo circular. Esta intervención permitió analizar la capacidad del modelo para adaptarse a cambios en la 
-infraestructura vial y evaluar cómo se redistribuye el tráfico ante transformaciones físicas como obras, rediseños geométricos o mejoras operativas.\\
-
